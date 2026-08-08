@@ -4,15 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Honeest · Maria Lan</title>
-  <meta name="description" content="Honeest: a project by Maria Lan." />
+  <meta name="description" content="Honeest: a honey brand that shows up, does its job, and lets the work speak." />
 
-  <!-- Fonts and shared styles — identical to the home page -->
+  <!-- Fonts and shared styles, identical to the home page -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Frank+Ruhl+Libre:wght@300;400;700&family=DM+Sans:wght@400;500&family=Heebo:wght@400;500&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Frank+Ruhl+Libre:wght@300;400;700&family=DM+Sans:wght@400;500&family=Heebo:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/styles.css" />
 </head>
 
@@ -32,21 +29,19 @@
   </nav>
 
   <!-- ============================================================
-       COVER — assets/projects/honeest/01
+       COVER
   ============================================================ -->
   <section class="project-hero">
-    <img src="../assets/projects/honeest/01.svg" alt="Honeest, cover" />
+    <img src="../assets/projects/honeest/cover.jpg" alt="Honeest, cover" />
   </section>
 
   <!-- ============================================================
        HEADING + DETAILS
-       // FILL IN: the one-line description below
   ============================================================ -->
   <section class="project-head">
     <div class="container reveal">
       <span class="project-index">02</span>
-      <h1 class="project-title" dir="auto">Honeest</h1>
-      <p class="project-lead">[ One line describing the project ]</p>
+      <h1 class="project-title">Honeest</h1>
 
       <dl class="project-meta">
         <div><dt>Year</dt><dd>2026</dd></div>
@@ -57,58 +52,45 @@
 
   <!-- ============================================================
        WRITE-UP
-       // FILL IN: replace both paragraphs with the real description.
-       Add or remove <p> tags as needed. Hebrew copy: put
-       lang="he" dir="rtl" on the .project-body div.
   ============================================================ -->
   <section class="container">
     <div class="project-body reveal">
-        <p>[ Describe the project here: what it was, what you made. ]</p>
-        <p>[ Second paragraph, if you want one. ]</p>
+      <div class="project-text" lang="en">
+        <p>Honeest was founded by two friends tired of the same old honey image: serious faces, gold labels, everyone claiming to be the best, the most natural, the most eco-friendly.</p>
+        <p>Then one afternoon they watched a bee land on a flower, take what she needed, and fly away: no announcement, no fanfare, just quiet, dedicated work, the most honest thing they'd ever seen.</p>
+        <p>That's why Honeest exists: a brand that shows up, does its job, and modestly hopes you'll like this simply really good honey, made by bees who worked very hard.</p>
+      </div>
     </div>
   </section>
 
   <!-- ============================================================
-       MEDIA — assets/projects/honeest/02 onward
-       Alternates full and half width. Add a seventh with
-       class="media media--full"; drop to five and site.js widens
-       the leftover so the grid stays even. Each opens in the
-       lightbox. Swap a figure for the video block to show a clip.
+       MEDIA
   ============================================================ -->
   <section class="container">
     <div class="gallery reveal">
-      <figure class="media media--full">
-        <img src="../assets/projects/honeest/02.svg" alt="Honeest, image 1" />
+      <figure class="media media--half">
+        <img src="../assets/projects/honeest/01.jpg" alt="Beekeeper holding a wildflower honey jar" loading="lazy" decoding="async" />
       </figure>
 
       <figure class="media media--half">
-        <img src="../assets/projects/honeest/03.svg" alt="Honeest, image 2" />
+        <img src="../assets/projects/honeest/02.jpg" alt="Three posters on a street billboard" loading="lazy" decoding="async" />
       </figure>
 
       <figure class="media media--half">
-        <img src="../assets/projects/honeest/04.svg" alt="Honeest, image 3" />
-      </figure>
-
-      <figure class="media media--full">
-        <img src="../assets/projects/honeest/05.svg" alt="Honeest, image 4" />
+        <img src="../assets/projects/honeest/03.jpg" alt="Hands holding two packaging boxes" loading="lazy" decoding="async" />
       </figure>
 
       <figure class="media media--half">
-        <img src="../assets/projects/honeest/06.svg" alt="Honeest, image 5" />
+        <img src="../assets/projects/honeest/04.jpg" alt="Two posters on a street stand" loading="lazy" decoding="async" />
       </figure>
 
       <figure class="media media--half">
-        <img src="../assets/projects/honeest/07.svg" alt="Honeest, image 6" />
+        <img src="../assets/projects/honeest/05.jpg" alt="Small packets among wildflowers" loading="lazy" decoding="async" />
       </figure>
 
-      <!--
-      <figure class="media media--full">
-        <video src="../assets/projects/honeest/clip.mp4"
-               poster="../assets/projects/honeest/01.svg"
-               autoplay muted loop playsinline></video>
-        <figcaption>Motion study</figcaption>
+      <figure class="media media--half">
+        <img src="../assets/projects/honeest/06.jpg" alt="A wrapped jar held against the sky" loading="lazy" decoding="async" />
       </figure>
-      -->
     </div>
   </section>
 
@@ -118,7 +100,7 @@
   <section class="container">
     <a href="t2med.html" class="project-next">
       <span class="project-next__label">Next project</span>
-      <span class="project-next__title" dir="auto">T2Med</span>
+      <span class="project-next__title">T2Med</span>
     </a>
   </section>
 
@@ -148,7 +130,7 @@
     </div>
   </footer>
 
-  <!-- Lightbox — shared markup, holds an image or a video -->
+  <!-- Lightbox: shared markup, holds an image or a video -->
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Media viewer">
     <button class="lightbox__close" id="lightboxClose" aria-label="Close">&times;</button>
     <div class="lightbox__stage" id="lightboxStage"></div>

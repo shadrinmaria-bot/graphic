@@ -90,13 +90,21 @@ if (track) {
 ------------------------------------------------------------ */
 document.querySelectorAll('.gallery').forEach((gallery) => {
   const items = Array.from(gallery.children);
-  const last = items[items.length - 1];
-  const prev = items[items.length - 2];
-  const orphaned = last
-    && !last.classList.contains('media--full')
-    && (!prev || prev.classList.contains('media--full'));
+  if (!items.length) return;
 
-  if (orphaned) last.classList.add('media--full');
+  // Walk the grid counting columns used. A half-width item that lands on a
+  // fresh row with nothing to follow it would sit alone, so widen it.
+  // Counting beats checking the previous item: that only recognised one
+  // particular pattern, and galleries here mix full and half freely.
+  let col = 0;
+  items.forEach((el, i) => {
+    const isFull = el.classList.contains('media--full');
+    if (i === items.length - 1 && !isFull && col % 2 === 0) {
+      el.classList.add('media--full');
+      return;
+    }
+    col += isFull ? 2 : 1;
+  });
 });
 
 /* ------------------------------------------------------------

@@ -3,16 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>צ'יק צ'אק · Maria Lan</title>
-  <meta name="description" content="צ'יק צ'אק: a project by Maria Lan." />
+  <title>ChikChak · Maria Lan</title>
+  <meta name="description" content="ChikChak: a browser extension that reads terms of service pages so you do not have to." />
 
-  <!-- Fonts and shared styles — identical to the home page -->
+  <!-- Fonts and shared styles, identical to the home page -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Frank+Ruhl+Libre:wght@300;400;700&family=DM+Sans:wght@400;500&family=Heebo:wght@400;500&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Frank+Ruhl+Libre:wght@300;400;700&family=DM+Sans:wght@400;500&family=Heebo:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/styles.css" />
 </head>
 
@@ -32,21 +29,20 @@
   </nav>
 
   <!-- ============================================================
-       COVER — assets/projects/chik-chak/01
+       COVER
   ============================================================ -->
   <section class="project-hero">
-    <img src="../assets/projects/chik-chak/01.svg" alt="צ'יק צ'אק, cover" />
+    <img src="../assets/projects/chik-chak/cover.jpg" alt="ChikChak, cover" />
   </section>
 
   <!-- ============================================================
        HEADING + DETAILS
-       // FILL IN: the one-line description below
   ============================================================ -->
   <section class="project-head">
     <div class="container reveal">
       <span class="project-index">05</span>
-      <h1 class="project-title" lang="he" dir="auto">צ'יק צ'אק</h1>
-      <p class="project-lead">[ One line describing the project ]</p>
+      <h1 class="project-title">ChikChak</h1>
+      <p class="project-title-he" lang="he" dir="rtl">צ'יקצ'אק</p>
 
       <dl class="project-meta">
         <div><dt>Year</dt><dd>2026</dd></div>
@@ -56,59 +52,56 @@
   </section>
 
   <!-- ============================================================
-       WRITE-UP
-       // FILL IN: replace both paragraphs with the real description.
-       Add or remove <p> tags as needed. Hebrew copy: put
-       lang="he" dir="rtl" on the .project-body div.
+       WRITE-UP — English first, Hebrew below
   ============================================================ -->
   <section class="container">
     <div class="project-body reveal">
-        <p>[ Describe the project here: what it was, what you made. ]</p>
-        <p>[ Second paragraph, if you want one. ]</p>
+      <div class="project-text" lang="en">
+        <span class="project-text__label">English</span>
+        <p>ChikChak is a browser extension that scans Terms of Service and Privacy Policy pages, alerting users in plain, friendly language when problematic clauses are found, such as data sharing, waived legal rights, or unilateral policy changes.</p>
+        <p>The project was developed as part of an academic lab course (Ma'abada) in collaboration with Noga Nachman. The original concept was proposed by me, and I led the design and interface prototyping, while the visual style was developed together with my partner.</p>
+      </div>
+
+      <div class="project-text project-text--he" lang="he" dir="rtl">
+        <span class="project-text__label">עברית</span>
+        <p>צ'יקצ'אק הוא תוסף דפדפן שסורק דפי תנאי שימוש ומדיניות פרטיות, ומתריע למשתמשים בשפה פשוטה וידידותית כשמתגלים סעיפים בעייתיים, כמו שיתוף מידע, ויתור על זכויות משפטיות, או שינויי מדיניות חד-צדדיים.</p>
+        <p>הפרויקט פותח במסגרת מעבדה אקדמית, בשיתוף פעולה עם נוגה נחמן. הרעיון המקורי הוצע על ידי, ואני הובלתי את עיצוב הממשק ובניית הפרוטוטייפ, כאשר הסגנון הגרפי פותח יחד עם השותפה.</p>
+      </div>
     </div>
   </section>
 
   <!-- ============================================================
-       MEDIA — assets/projects/chik-chak/02 onward
-       Alternates full and half width. Add a seventh with
-       class="media media--full"; drop to five and site.js widens
-       the leftover so the grid stays even. Each opens in the
-       lightbox. Swap a figure for the video block to show a clip.
+       MEDIA
   ============================================================ -->
   <section class="container">
     <div class="gallery reveal">
       <figure class="media media--full">
-        <img src="../assets/projects/chik-chak/02.svg" alt="צ'יק צ'אק, image 1" />
+        <img src="../assets/projects/chik-chak/01.jpg" alt="Setting up the exhibition wall" loading="lazy" decoding="async" />
       </figure>
 
       <figure class="media media--half">
-        <img src="../assets/projects/chik-chak/03.svg" alt="צ'יק צ'אק, image 2" />
+        <video poster="../assets/projects/chik-chak/02-poster.jpg"
+               autoplay muted loop playsinline preload="metadata" aria-label="The extension flagging a terms of service page">
+          <source src="../assets/projects/chik-chak/02.mp4" type="video/mp4" />
+          <source src="../assets/projects/chik-chak/02.webm" type="video/webm" />
+        </video>
       </figure>
 
       <figure class="media media--half">
-        <img src="../assets/projects/chik-chak/04.svg" alt="צ'יק צ'אק, image 3" />
-      </figure>
-
-      <figure class="media media--full">
-        <img src="../assets/projects/chik-chak/05.svg" alt="צ'יק צ'אק, image 4" />
-      </figure>
-
-      <figure class="media media--half">
-        <img src="../assets/projects/chik-chak/06.svg" alt="צ'יק צ'אק, image 5" />
+        <video poster="../assets/projects/chik-chak/03-poster.jpg"
+               autoplay muted loop playsinline preload="metadata" aria-label="The extension in use">
+          <source src="../assets/projects/chik-chak/03.mp4" type="video/mp4" />
+          <source src="../assets/projects/chik-chak/03.webm" type="video/webm" />
+        </video>
       </figure>
 
       <figure class="media media--half">
-        <img src="../assets/projects/chik-chak/07.svg" alt="צ'יק צ'אק, image 6" />
+        <img src="../assets/projects/chik-chak/04.jpg" alt="Tote bag with the character keyring" loading="lazy" decoding="async" />
       </figure>
 
-      <!--
-      <figure class="media media--full">
-        <video src="../assets/projects/chik-chak/clip.mp4"
-               poster="../assets/projects/chik-chak/01.svg"
-               autoplay muted loop playsinline></video>
-        <figcaption>Motion study</figcaption>
+      <figure class="media media--half">
+        <img src="../assets/projects/chik-chak/05.jpg" alt="The red X character on the wall" loading="lazy" decoding="async" />
       </figure>
-      -->
     </div>
   </section>
 
@@ -118,7 +111,7 @@
   <section class="container">
     <a href="domovoy.html" class="project-next">
       <span class="project-next__label">Next project</span>
-      <span class="project-next__title" lang="he" dir="auto">דומובוי עולה לארץ</span>
+      <span class="project-next__title">Domovoi Makes Aliyah</span>
     </a>
   </section>
 
@@ -148,7 +141,7 @@
     </div>
   </footer>
 
-  <!-- Lightbox — shared markup, holds an image or a video -->
+  <!-- Lightbox: shared markup, holds an image or a video -->
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Media viewer">
     <button class="lightbox__close" id="lightboxClose" aria-label="Close">&times;</button>
     <div class="lightbox__stage" id="lightboxStage"></div>
