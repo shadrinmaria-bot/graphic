@@ -30,8 +30,20 @@ just say so and they will be wired up.
 `assets/carousel/` — the strip under the intro. Any number of images,
 square works best. Currently seven placeholders.
 
+## Categories and years — already set
+
+| # | Project              | Category                     | Year |
+|---|----------------------|------------------------------|------|
+| 1 | דומובוי עולה לארץ    | Illustration & Storytelling  | 2026 |
+| 2 | Honeest              | Branding & Identity          | 2026 |
+| 3 | T2Med                | Branding & Identity          | 2025 |
+| 4 | הדלת הפתוחה          | Design                       | 2025 |
+| 5 | צ'יק צ'אק            | Branding & Identity          | 2026 |
+
+The category shows on the home page card and in the project page's
+detail row, alongside the year.
+
 ## Still to fill in
 
-Each project page has bracketed placeholders: `[ Category ]`,
-`[ Year ]`, `[ Role ]`, `[ Client ]`, and the description paragraphs.
-The same `[ Category ]` appears on the home page card.
+Only the writing: the one-line lead under each title, and the
+description paragraphs. Both are marked with `[ ... ]` on the page.
