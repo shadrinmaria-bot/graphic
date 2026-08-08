@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="01">
+  <rect width="1600" height="900" fill="#E6DAD6"/>
+  <rect x="32" y="32" width="1536" height="836" fill="none" stroke="#867070" stroke-opacity=".35" stroke-width="1"/>
+  <text x="50%" y="50%" fill="#867070" font-family="DM Sans, Helvetica, Arial, sans-serif"
+        font-size="50" letter-spacing="9.0" text-anchor="middle" dominant-baseline="middle">01</text>
+</svg>
