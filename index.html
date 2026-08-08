@@ -8,13 +8,13 @@
 
   <!-- ============================================================
        GOOGLE FONTS
-       Serif (headings): Cormorant Garamond
+       Serif (headings): Inria Serif
        Sans  (body/labels): DM Sans
   ============================================================ -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400&family=DM+Sans:wght@400;500&display=swap"
     rel="stylesheet"
   />
 
@@ -40,12 +40,21 @@
        2. HERO — single full-section image
   ============================================================ -->
   <section class="hero" id="hero">
-    <!-- The space in the filename has to be escaped as %20 in a URL. -->
-    <img
-      class="hero__img"
-      src="assets/Frame%201.jpg"
-      alt="Maria Lan — Portfolio 2026, a pressed-flower composition"
-    />
+    <div class="hero__stage">
+      <!-- The artwork with its three loose shapes erased. They are layered
+           back on below so each can drift independently. The original
+           upload is kept untouched at assets/Frame 1.jpg. -->
+      <img
+        class="hero__img"
+        src="assets/hero-base.jpg"
+        alt="Maria Lan — Portfolio 2026, a pressed-flower composition"
+      />
+
+      <!-- Lifted from the artwork, pinned back at their exact positions -->
+      <img class="hero__shape hero__shape--circle"  src="assets/hero-shape-circle.png"  alt="" aria-hidden="true" />
+      <img class="hero__shape hero__shape--pyramid" src="assets/hero-shape-pyramid.png" alt="" aria-hidden="true" />
+      <img class="hero__shape hero__shape--star"    src="assets/hero-shape-star.png"    alt="" aria-hidden="true" />
+    </div>
   </section>
 
   <!-- ============================================================
