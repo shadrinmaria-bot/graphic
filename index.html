@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maria Shadrin — Graphic Designer & Illustrator</title>
-  <meta name="description" content="Portfolio of Maria Shadrin — graphic designer and illustrator. Visual identity, illustration, and design that leaves an impression." />
+  <title>Maria Lan — Graphic Designer & Illustrator</title>
+  <meta name="description" content="Portfolio of Maria Lan — graphic designer and illustrator. Visual identity, illustration, and design that leaves an impression." />
 
   <!-- ============================================================
        GOOGLE FONTS
@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@400;500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500&display=swap"
     rel="stylesheet"
   />
 
@@ -25,22 +25,21 @@
     ============================================================ */
     :root {
       /* Palette */
-      --cream:        #FAF6EF;   /* warm base background */
-      --cream-deep:   #F2EADD;   /* slightly deeper cream for cards */
-      --ink:          #3D3325;   /* dark olive/brown — primary text */
-      --ink-soft:     #6B5F4E;   /* muted text */
-      --accent:       #B98C82;   /* dusty rose accent */
-      --accent-sage:  #9AA88B;   /* soft sage — secondary accent */
-      --hairline:     #DBD2C4;   /* thin divider rule color */
+      --bg:         #F8F6F4;   /* page background */
+      --ink:        #867070;   /* primary text */
+      --accent:     #D5B4B4;   /* pinkish accent */
+      --tint:       #EFE9E6;   /* soft fill behind images while loading */
+      --hairline:   #E4DCD8;   /* thin divider rules */
+      --light:      #F8F6F4;   /* text on dark / over imagery */
 
       /* Typography */
       --serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
       --sans:  'DM Sans', system-ui, -apple-system, sans-serif;
 
       /* Layout */
-      --max-width: 1200px;
-      --gutter: clamp(1.25rem, 5vw, 4rem);
-      --nav-height: 68px;
+      --max-width: 1180px;
+      --gutter: clamp(1.25rem, 5vw, 3.5rem);
+      --nav-height: 64px;
     }
 
     /* ============================================================
@@ -53,31 +52,33 @@
     html { scroll-behavior: smooth; }
 
     body {
-      background: var(--cream);
+      background: var(--bg);
       color: var(--ink);
       font-family: var(--sans);
-      font-size: 17px;
-      line-height: 1.65;
+      font-size: 16px;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
       overflow-x: hidden;
     }
 
-    img { display: block; max-width: 100%; }
+    /* No rounded corners anywhere — squared, strict edges */
+    img {
+      display: block;
+      max-width: 100%;
+      border-radius: 0;
+    }
     a { color: inherit; text-decoration: none; }
 
     /* Small-caps label helper */
     .label {
       font-family: var(--sans);
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       font-weight: 500;
-      letter-spacing: 0.28em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--accent);
+      color: var(--ink);
     }
-
-    /* Serif display helper */
-    .serif { font-family: var(--serif); font-weight: 500; }
 
     .container {
       width: 100%;
@@ -98,11 +99,10 @@
 
     /* ============================================================
        SCROLL FADE-IN ANIMATION
-       Elements with .reveal fade + rise into view.
     ============================================================ */
     .reveal {
       opacity: 0;
-      transform: translateY(28px);
+      transform: translateY(20px);
       transition: opacity 0.9s ease, transform 0.9s ease;
       will-change: opacity, transform;
     }
@@ -117,7 +117,7 @@
 
     /* ============================================================
        1. NAVIGATION
-       Transparent over hero, solid (cream) on scroll.
+       Transparent over the hero image, solid on scroll.
     ============================================================ */
     .nav {
       position: fixed;
@@ -126,15 +126,18 @@
       height: var(--nav-height);
       display: flex;
       align-items: center;
-      transition: background 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
       background: transparent;
       border-bottom: 1px solid transparent;
+      transition: background 0.4s ease, border-color 0.4s ease, color 0.4s ease;
+      /* light text while sitting over the hero artwork */
+      color: var(--light);
     }
     .nav.is-solid {
-      background: rgba(250, 246, 239, 0.9);
+      background: rgba(248, 246, 244, 0.92);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--hairline);
+      color: var(--ink);
     }
     .nav__inner {
       width: 100%;
@@ -147,134 +150,122 @@
     }
     .nav__brand {
       font-family: var(--serif);
-      font-weight: 600;
-      font-size: 1.35rem;
-      letter-spacing: 0.01em;
+      font-weight: 500;
+      font-size: 1.15rem;
+      letter-spacing: 0.02em;
     }
     .nav__links {
       display: flex;
-      gap: clamp(1.25rem, 3vw, 2.5rem);
+      gap: clamp(1.1rem, 2.5vw, 2rem);
       list-style: none;
     }
     .nav__links a {
-      font-size: 0.82rem;
+      font-size: 0.72rem;
       font-weight: 500;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--ink);
       position: relative;
       padding-bottom: 3px;
     }
-    /* underline grows on hover */
     .nav__links a::after {
       content: "";
       position: absolute;
       left: 0; bottom: 0;
       width: 0; height: 1px;
-      background: var(--accent);
+      background: currentColor;
       transition: width 0.35s ease;
     }
     .nav__links a:hover::after { width: 100%; }
 
     /* ============================================================
-       2. HERO
+       2. HERO — one full-section image, stretched edge to edge
     ============================================================ */
     .hero {
-      background: var(--cream);
-      min-height: 100svh;
-      padding-top: var(--nav-height);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
       position: relative;
+      width: 100%;
+      height: 100svh;
+      min-height: 480px;
       overflow: hidden;
+      background: var(--tint);
     }
-    .hero__badge {
-      /* circular rotating badge text near the name */
-      width: 132px;
-      height: 132px;
-      margin-bottom: 1.5rem;
-      animation: spin 26s linear infinite;
+    .hero__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;   /* stretches/fills the whole section */
+      object-position: center;
     }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    @media (prefers-reduced-motion: reduce) {
-      .hero__badge { animation: none; }
+    /* Soft scrim at the top so the nav stays readable over any artwork */
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 180px;
+      background: linear-gradient(to bottom, rgba(80, 66, 66, 0.35), transparent);
+      pointer-events: none;
     }
-    .hero__badge text {
-      font-family: var(--sans);
-      font-size: 8.5px;
-      letter-spacing: 3.2px;
-      text-transform: uppercase;
-      fill: var(--ink-soft);
+
+    /* ============================================================
+       INTRO — name, tagline and the rotating badge
+    ============================================================ */
+    .intro { padding-block: clamp(3rem, 8vw, 6rem); }
+    .intro__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: clamp(2rem, 6vw, 5rem);
+    }
+    .intro__name {
+      font-family: var(--serif);
       font-weight: 500;
+      font-size: clamp(2.25rem, 6vw, 3.75rem);
+      line-height: 1.05;
+      letter-spacing: 0.005em;
     }
-    .hero__badge .badge-star {
-      font-family: var(--serif);
-      font-size: 22px;
-      fill: var(--accent);
-    }
-    .hero__name {
-      font-family: var(--serif);
-      font-weight: 600;
-      font-size: clamp(3.5rem, 13vw, 9.5rem);
-      line-height: 0.95;
-      letter-spacing: -0.01em;
-      margin-bottom: 1.5rem;
-    }
-    .hero__tagline {
+    .intro__tagline {
       font-family: var(--serif);
       font-style: italic;
       font-weight: 400;
-      font-size: clamp(1.15rem, 3vw, 1.7rem);
-      color: var(--ink-soft);
+      font-size: clamp(0.98rem, 1.6vw, 1.2rem);
       max-width: 34ch;
-      margin-inline: auto;
+      margin-top: 0.85rem;
     }
-    /* space at bottom of hero for future illustration */
-    .hero__art {
-      /* // REPLACE HERO ILLUSTRATION WITH REAL ARTWORK LATER */
-      margin-top: clamp(2.5rem, 7vw, 5rem);
-      width: min(560px, 80vw);
-      height: clamp(120px, 22vw, 220px);
-      border-radius: 200px 200px 0 0;
-      background:
-        radial-gradient(120% 100% at 50% 100%, var(--accent) 0%, transparent 60%),
-        linear-gradient(160deg, var(--cream-deep), #E9DFCF);
-      opacity: 0.85;
-      position: relative;
+
+    /* Rotating circular badge — circle stays 132px, text enlarged */
+    .badge {
+      width: 132px;
+      height: 132px;
+      flex: 0 0 auto;
+      animation: spin 30s linear infinite;
     }
-    .hero__art::after {
-      content: "illustration placeholder";
-      position: absolute;
-      inset: auto 0 12px 0;
-      text-align: center;
-      font-size: 0.68rem;
-      letter-spacing: 0.2em;
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) {
+      .badge { animation: none; }
+    }
+    .badge text {
+      font-family: var(--sans);
+      font-size: 16px;          /* viewBox units — renders ~10.5px */
+      letter-spacing: 3.6px;
       text-transform: uppercase;
-      color: var(--ink-soft);
-      opacity: 0.55;
+      fill: var(--ink);
+      font-weight: 500;
     }
+    .badge__mark { fill: var(--accent); }
 
     /* ============================================================
        3. AUTO-SCROLLING CAROUSEL
     ============================================================ */
     .carousel {
-      padding-block: clamp(2.5rem, 6vw, 4.5rem);
+      padding-block: clamp(2rem, 5vw, 3.5rem);
       overflow: hidden;
     }
     .carousel__track {
       display: flex;
-      gap: 1.25rem;
+      gap: 1rem;
       width: max-content;
-      /* animation drives the infinite scroll; JS duplicates slides */
-      animation: marquee 48s linear infinite;
+      /* CSS drives the loop; JS clones the slides for seamlessness */
+      animation: marquee 52s linear infinite;
     }
-    .carousel:hover .carousel__track,
-    .carousel__track.is-paused {
-      animation-play-state: paused;
-    }
+    .carousel:hover .carousel__track { animation-play-state: paused; }
     @keyframes marquee {
       from { transform: translateX(0); }
       /* -50% because the track holds two identical halves */
@@ -282,15 +273,15 @@
     }
     .carousel__item {
       flex: 0 0 auto;
-      width: clamp(180px, 24vw, 300px);
-      aspect-ratio: 1 / 1;    /* 1:1 as specified */
-      border-radius: 14px;
+      width: clamp(170px, 22vw, 270px);
+      aspect-ratio: 1 / 1;
       overflow: hidden;
       cursor: pointer;
-      position: relative;
-      transition: transform 0.4s ease;
+      background: var(--tint);
+      opacity: 0.9;
+      transition: opacity 0.4s ease;
     }
-    .carousel__item:hover { transform: translateY(-6px); }
+    .carousel__item:hover { opacity: 1; }
     .carousel__item img {
       width: 100%;
       height: 100%;
@@ -298,146 +289,139 @@
     }
 
     /* ============================================================
-       4. WORKS — BENTO GRID
+       4. WORKS — editorial layout, one work at a time,
+          each given its own space and rhythm
     ============================================================ */
-    .works { padding-block: clamp(4rem, 10vw, 8rem); }
-    .works__head { margin-bottom: clamp(2rem, 5vw, 3.5rem); }
+    .works { padding-block: clamp(3.5rem, 9vw, 7rem); }
+    .works__head { margin-bottom: clamp(2.5rem, 7vw, 5rem); }
     .works__heading {
       font-family: var(--serif);
-      font-weight: 600;
-      font-size: clamp(2.6rem, 7vw, 5rem);
-      line-height: 1;
-      margin-top: 0.6rem;
+      font-weight: 500;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      line-height: 1.1;
+      margin-top: 0.5rem;
     }
 
-    .bento {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-auto-rows: 220px;
-      gap: 1.25rem;
+    .work {
+      display: block;
+      margin-top: clamp(4rem, 11vw, 9.5rem);
     }
-    /* Card placements:
-       Top row: wide card (2 cols) + tall card (2 rows)
-       Bottom row: 2 medium cards + 1 filler card */
-    .bento__card--wide   { grid-column: span 2; }
-    .bento__card--tall   { grid-column: span 2; grid-row: span 2; }
-    .bento__card--medium { grid-column: span 1; }
-    .bento__card--fill   { grid-column: span 1; }
+    .work:first-of-type { margin-top: 0; }
 
-    .bento__card {
-      position: relative;
-      border-radius: 16px;
+    /* Asymmetric widths + alignment give each piece its own breathing room */
+    .work--wide    { width: min(100%, 64%); }
+    .work--medium  { width: min(100%, 52%); }
+    .work--narrow  { width: min(100%, 43%); }
+    .work--full    { width: min(100%, 76%); }
+    .work--left    { margin-right: auto; }
+    .work--right   { margin-left: auto; }
+    .work--center  { margin-inline: auto; }
+
+    .work__frame {
       overflow: hidden;
-      cursor: pointer;
-      background: var(--cream-deep);
+      background: var(--tint);
     }
-    .bento__card img {
+    .work__frame img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.6s ease;
+      transition: transform 0.9s ease;
     }
-    .bento__card:hover img { transform: scale(1.05); }
+    .work:hover .work__frame img { transform: scale(1.03); }
 
-    /* soft overlay revealing project name on hover */
-    .bento__overlay {
-      position: absolute;
-      inset: 0;
+    .work__meta {
       display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 1.25rem 1.4rem;
-      background: linear-gradient(to top, rgba(61, 51, 37, 0.78) 0%, rgba(61, 51, 37, 0) 60%);
-      opacity: 0;
-      transition: opacity 0.45s ease;
+      align-items: baseline;
+      gap: 1rem;
+      margin-top: 1.1rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--hairline);
     }
-    .bento__card:hover .bento__overlay { opacity: 1; }
-    .bento__title {
-      font-family: var(--serif);
-      font-weight: 600;
-      font-size: 1.5rem;
-      color: var(--cream);
-      line-height: 1.1;
-    }
-    .bento__tag {
+    .work__index {
       font-size: 0.68rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
+      letter-spacing: 0.14em;
       color: var(--accent);
-      margin-top: 0.35rem;
+      flex: 0 0 auto;
     }
+    .work__title {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(1.05rem, 2vw, 1.4rem);
+      line-height: 1.2;
+      flex: 1 1 auto;
+    }
+    .work__tag {
+      font-size: 0.66rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      flex: 0 0 auto;
+      opacity: 0.75;
+    }
+    .work:hover .work__title { text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; }
 
     /* ============================================================
        5. ABOUT
     ============================================================ */
     .about {
-      padding-block: clamp(4rem, 10vw, 8rem);
+      padding-block: clamp(3.5rem, 9vw, 7rem);
       text-align: center;
     }
     .about__text {
       font-family: var(--serif);
       font-weight: 400;
-      font-size: clamp(1.6rem, 4.5vw, 2.9rem);
-      line-height: 1.28;
-      max-width: 20ch;
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      line-height: 1.35;
+      max-width: 24ch;
       margin-inline: auto;
     }
-    .about__text em { color: var(--accent); font-style: italic; }
+    .about__text em { font-style: italic; }
     .about__link {
       display: inline-block;
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      letter-spacing: 0.04em;
-      color: var(--ink-soft);
+      margin-top: 1.75rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.03em;
       border-bottom: 1px solid var(--accent);
       padding-bottom: 2px;
-      transition: color 0.3s ease;
+      transition: border-color 0.3s ease;
     }
-    .about__link:hover { color: var(--accent); }
+    .about__link:hover { border-color: var(--ink); }
 
     /* ============================================================
        6. FOOTER
     ============================================================ */
     .footer {
-      padding-block: clamp(3.5rem, 8vw, 6rem);
+      padding-block: clamp(3rem, 7vw, 5.5rem);
       text-align: center;
     }
     .footer__email {
       font-family: var(--serif);
-      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-size: clamp(1.15rem, 2.6vw, 1.75rem);
       font-weight: 500;
       display: inline-block;
-      margin-bottom: 1.75rem;
-      transition: color 0.3s ease;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease;
     }
-    .footer__email:hover { color: var(--accent); }
+    .footer__email:hover { border-color: var(--accent); }
     .footer__social {
       display: flex;
       justify-content: center;
-      gap: 1.25rem;
-      margin-bottom: 2rem;
+      gap: 1.5rem;
+      margin-bottom: 1.75rem;
     }
     .footer__social a {
-      width: 44px;
-      height: 44px;
       display: grid;
       place-items: center;
-      border: 1px solid var(--hairline);
-      border-radius: 50%;
-      color: var(--ink-soft);
-      transition: color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+      opacity: 0.75;
+      transition: opacity 0.3s ease, color 0.3s ease;
     }
-    .footer__social a:hover {
-      color: var(--accent);
-      border-color: var(--accent);
-      transform: translateY(-3px);
-    }
-    .footer__social svg { width: 18px; height: 18px; }
+    .footer__social a:hover { opacity: 1; color: var(--accent); }
+    .footer__social svg { width: 17px; height: 17px; }
     .footer__copy {
-      font-size: 0.8rem;
+      font-size: 0.68rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--ink-soft);
+      opacity: 0.7;
     }
 
     /* ============================================================
@@ -451,7 +435,7 @@
       align-items: center;
       justify-content: center;
       padding: 5vw;
-      background: rgba(35, 29, 21, 0.88);
+      background: rgba(60, 50, 50, 0.9);
       backdrop-filter: blur(6px);
       -webkit-backdrop-filter: blur(6px);
       opacity: 0;
@@ -461,54 +445,47 @@
     .lightbox__img {
       max-width: 90vw;
       max-height: 88vh;
-      border-radius: 10px;
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
-      transform: scale(0.96);
+      border-radius: 0;
+      transform: scale(0.97);
       transition: transform 0.35s ease;
     }
     .lightbox.is-open .lightbox__img { transform: scale(1); }
     .lightbox__close {
       position: absolute;
-      top: 24px; right: 28px;
-      width: 46px; height: 46px;
-      border: 1px solid rgba(250, 246, 239, 0.4);
-      border-radius: 50%;
+      top: 20px; right: 24px;
+      width: 40px; height: 40px;
+      border: 1px solid rgba(248, 246, 244, 0.4);
       background: transparent;
-      color: var(--cream);
-      font-size: 1.4rem;
+      color: var(--light);
+      font-size: 1.25rem;
       line-height: 1;
       cursor: pointer;
       display: grid;
       place-items: center;
-      transition: background 0.3s ease, transform 0.3s ease;
+      transition: background 0.3s ease;
     }
-    .lightbox__close:hover {
-      background: rgba(250, 246, 239, 0.15);
-      transform: rotate(90deg);
-    }
+    .lightbox__close:hover { background: rgba(248, 246, 244, 0.14); }
 
     /* ============================================================
-       RESPONSIVE — bento collapses on smaller screens
+       RESPONSIVE
     ============================================================ */
-    @media (max-width: 820px) {
-      .bento {
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: 200px;
-      }
-      .bento__card--wide   { grid-column: span 2; }
-      .bento__card--tall   { grid-column: span 2; grid-row: span 1; }
-      .bento__card--medium { grid-column: span 1; }
-      .bento__card--fill   { grid-column: span 2; }
+    @media (max-width: 860px) {
+      .work--wide,
+      .work--medium,
+      .work--narrow,
+      .work--full { width: 100%; }
     }
-    @media (max-width: 520px) {
-      .bento { grid-template-columns: 1fr; }
-      .bento__card--wide,
-      .bento__card--tall,
-      .bento__card--medium,
-      .bento__card--fill { grid-column: span 1; grid-row: span 1; }
-      .nav__brand { font-size: 1.15rem; }
-      .nav__links { gap: 1rem; }
-      .nav__links a { font-size: 0.72rem; letter-spacing: 0.1em; }
+    @media (max-width: 640px) {
+      .intro__inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+      }
+      .badge { width: 108px; height: 108px; }
+      .work__meta { flex-wrap: wrap; row-gap: 0.35rem; }
+      .work__tag { width: 100%; }
+      .nav__links { gap: 0.9rem; }
+      .nav__links a { font-size: 0.66rem; letter-spacing: 0.1em; }
     }
   </style>
 </head>
@@ -519,7 +496,7 @@
   ============================================================ -->
   <nav class="nav" id="nav">
     <div class="nav__inner">
-      <a href="#hero" class="nav__brand">Maria Shadrin</a>
+      <a href="#hero" class="nav__brand">Maria Lan</a>
       <ul class="nav__links">
         <li><a href="#works">Works</a></li>
         <li><a href="#about">About</a></li>
@@ -529,31 +506,47 @@
   </nav>
 
   <!-- ============================================================
-       2. HERO
+       2. HERO — single full-section image
+       // REPLACE WITH REAL IMAGE (full-bleed hero artwork)
   ============================================================ -->
-  <header class="hero" id="hero">
-    <!-- Circular badge text rotating near the name -->
-    <svg class="hero__badge" viewBox="0 0 200 200" aria-hidden="true">
-      <defs>
-        <path id="badgeCircle"
-          d="M 100,100 m -74,0 a 74,74 0 1,1 148,0 a 74,74 0 1,1 -148,0" />
-      </defs>
-      <text>
-        <textPath href="#badgeCircle" startOffset="0%">
-          Graphic Designer · Illustrator · Graphic Designer · Illustrator ·
-        </textPath>
-      </text>
-      <text class="badge-star" x="100" y="112" text-anchor="middle">✳</text>
-    </svg>
+  <section class="hero" id="hero">
+    <img
+      class="hero__img"
+      src="assets/hero.svg"
+      alt="Maria Lan — hero artwork"
+    />
+  </section>
 
-    <h1 class="hero__name">Maria&nbsp;Shadrin</h1>
-    <p class="hero__tagline">
-      Visual identity, illustration, and design that leaves an impression.
-    </p>
+  <!-- ============================================================
+       INTRO — name, tagline, rotating badge
+  ============================================================ -->
+  <section class="intro">
+    <div class="container intro__inner reveal">
+      <div class="intro__text">
+        <h1 class="intro__name">Maria Lan</h1>
+        <p class="intro__tagline">
+          Visual identity, illustration, and design that leaves an impression.
+        </p>
+      </div>
 
-    <!-- // REPLACE HERO ILLUSTRATION WITH REAL ARTWORK LATER -->
-    <div class="hero__art" aria-hidden="true"></div>
-  </header>
+      <!-- Rotating circular badge -->
+      <svg class="badge" viewBox="0 0 200 200" aria-hidden="true">
+        <defs>
+          <path id="badgeCircle"
+            d="M 100,100 m -74,0 a 74,74 0 1,1 148,0 a 74,74 0 1,1 -148,0" />
+        </defs>
+        <text>
+          <textPath href="#badgeCircle" startOffset="0%">
+            Graphic Designer · Illustrator ·
+          </textPath>
+        </text>
+        <!-- Four-point sparkle with concave sides -->
+        <path class="badge__mark"
+          d="M100 72 C102 92, 108 98, 128 100 C108 102, 102 108, 100 128
+             C98 108, 92 102, 72 100 C92 98, 98 92, 100 72 Z" />
+      </svg>
+    </div>
+  </section>
 
   <hr class="hairline" />
 
@@ -563,21 +556,21 @@
   ============================================================ -->
   <section class="carousel" aria-label="Selected imagery">
     <div class="carousel__track" id="carouselTrack">
-      <!-- // REPLACE WITH REAL IMAGES — warm-toned 1:1 placeholders -->
-      <div class="carousel__item"><img src="https://placehold.co/600x600/E4C7B7/3D3325?text=01" alt="Work 01" /></div>
-      <div class="carousel__item"><img src="https://placehold.co/600x600/C9B79C/3D3325?text=02" alt="Work 02" /></div>
-      <div class="carousel__item"><img src="https://placehold.co/600x600/B98C82/FAF6EF?text=03" alt="Work 03" /></div>
-      <div class="carousel__item"><img src="https://placehold.co/600x600/9AA88B/FAF6EF?text=04" alt="Work 04" /></div>
-      <div class="carousel__item"><img src="https://placehold.co/600x600/D8C3A5/3D3325?text=05" alt="Work 05" /></div>
-      <div class="carousel__item"><img src="https://placehold.co/600x600/E9DFCF/3D3325?text=06" alt="Work 06" /></div>
-      <div class="carousel__item"><img src="https://placehold.co/600x600/C4A69A/FAF6EF?text=07" alt="Work 07" /></div>
+      <!-- // REPLACE WITH REAL IMAGES — 1:1 placeholders -->
+      <div class="carousel__item"><img src="assets/carousel-01.svg" alt="Work 01" /></div>
+      <div class="carousel__item"><img src="assets/carousel-02.svg" alt="Work 02" /></div>
+      <div class="carousel__item"><img src="assets/carousel-03.svg" alt="Work 03" /></div>
+      <div class="carousel__item"><img src="assets/carousel-04.svg" alt="Work 04" /></div>
+      <div class="carousel__item"><img src="assets/carousel-05.svg" alt="Work 05" /></div>
+      <div class="carousel__item"><img src="assets/carousel-06.svg" alt="Work 06" /></div>
+      <div class="carousel__item"><img src="assets/carousel-07.svg" alt="Work 07" /></div>
     </div>
   </section>
 
   <hr class="hairline" />
 
   <!-- ============================================================
-       4. WORKS — BENTO GRID
+       4. WORKS — five pieces, each with its own space
   ============================================================ -->
   <section class="works" id="works">
     <div class="container">
@@ -586,52 +579,61 @@
         <h2 class="works__heading">Things I made</h2>
       </div>
 
-      <div class="bento reveal">
-        <!-- Top row: wide card -->
-        <!-- // REPLACE PLACEHOLDER IMAGES WITH REAL WORK -->
-        <a href="#" class="bento__card bento__card--wide">
-          <img src="https://placehold.co/900x440/C9B79C/3D3325?text=Project" alt="Aster Botanicals project" />
-          <div class="bento__overlay">
-            <span class="bento__title">Aster Botanicals</span>
-            <span class="bento__tag">Brand Identity</span>
-          </div>
-        </a>
+      <!-- // REPLACE PLACEHOLDER IMAGES WITH REAL WORK -->
+      <a href="#" class="work work--wide work--left reveal">
+        <figure class="work__frame" style="aspect-ratio: 4 / 3;">
+          <img src="assets/work-01.svg" alt="Aster Botanicals" />
+        </figure>
+        <div class="work__meta">
+          <span class="work__index">01</span>
+          <h3 class="work__title">Aster Botanicals</h3>
+          <span class="work__tag">Brand Identity</span>
+        </div>
+      </a>
 
-        <!-- Top row: tall card (spans 2 rows) -->
-        <a href="#" class="bento__card bento__card--tall">
-          <img src="https://placehold.co/460x460/B98C82/FAF6EF?text=Project" alt="Field Notes project" />
-          <div class="bento__overlay">
-            <span class="bento__title">Field Notes</span>
-            <span class="bento__tag">Editorial Illustration</span>
-          </div>
-        </a>
+      <a href="#" class="work work--narrow work--right reveal">
+        <figure class="work__frame" style="aspect-ratio: 4 / 5;">
+          <img src="assets/work-02.svg" alt="Field Notes" />
+        </figure>
+        <div class="work__meta">
+          <span class="work__index">02</span>
+          <h3 class="work__title">Field Notes</h3>
+          <span class="work__tag">Editorial Illustration</span>
+        </div>
+      </a>
 
-        <!-- Bottom row: 2 medium cards -->
-        <a href="#" class="bento__card bento__card--medium">
-          <img src="https://placehold.co/460x240/9AA88B/FAF6EF?text=Project" alt="Sunday Press project" />
-          <div class="bento__overlay">
-            <span class="bento__title">Sunday Press</span>
-            <span class="bento__tag">Packaging</span>
-          </div>
-        </a>
+      <a href="#" class="work work--full work--center reveal">
+        <figure class="work__frame" style="aspect-ratio: 16 / 9;">
+          <img src="assets/work-03.svg" alt="Sunday Press" />
+        </figure>
+        <div class="work__meta">
+          <span class="work__index">03</span>
+          <h3 class="work__title">Sunday Press</h3>
+          <span class="work__tag">Packaging</span>
+        </div>
+      </a>
 
-        <a href="#" class="bento__card bento__card--medium">
-          <img src="https://placehold.co/460x240/D8C3A5/3D3325?text=Project" alt="Ochre Studio project" />
-          <div class="bento__overlay">
-            <span class="bento__title">Ochre Studio</span>
-            <span class="bento__tag">Visual System</span>
-          </div>
-        </a>
+      <a href="#" class="work work--medium work--left reveal">
+        <figure class="work__frame" style="aspect-ratio: 1 / 1;">
+          <img src="assets/work-04.svg" alt="Ochre Studio" />
+        </figure>
+        <div class="work__meta">
+          <span class="work__index">04</span>
+          <h3 class="work__title">Ochre Studio</h3>
+          <span class="work__tag">Visual System</span>
+        </div>
+      </a>
 
-        <!-- Bottom row: fill card -->
-        <a href="#" class="bento__card bento__card--fill">
-          <img src="https://placehold.co/460x240/E4C7B7/3D3325?text=Project" alt="Marginalia project" />
-          <div class="bento__overlay">
-            <span class="bento__title">Marginalia</span>
-            <span class="bento__tag">Poster Series</span>
-          </div>
-        </a>
-      </div>
+      <a href="#" class="work work--medium work--right reveal">
+        <figure class="work__frame" style="aspect-ratio: 3 / 4;">
+          <img src="assets/work-05.svg" alt="Marginalia" />
+        </figure>
+        <div class="work__meta">
+          <span class="work__index">05</span>
+          <h3 class="work__title">Marginalia</h3>
+          <span class="work__tag">Poster Series</span>
+        </div>
+      </a>
     </div>
   </section>
 
@@ -644,7 +646,7 @@
     <div class="container reveal">
       <p class="about__text">
         I'm Maria, a graphic designer and illustrator based in Israel.
-        I make things look <em>intentional</em>.
+        I make things look <em>lived-in</em>.
       </p>
       <!-- // placeholder link -->
       <a href="#" class="about__link">Also into UX/UI? See that work here.</a>
@@ -675,7 +677,7 @@
         </a>
       </div>
 
-      <p class="footer__copy">Maria Shadrin 2026</p>
+      <p class="footer__copy">Maria Lan 2026</p>
     </div>
   </footer>
 
@@ -689,7 +691,7 @@
 
   <script>
     /* ============================================================
-       NAV — toggle solid background after scrolling past hero top
+       NAV — solid background once scrolled past the hero top
     ============================================================ */
     const nav = document.getElementById('nav');
     const onScroll = () => {
@@ -704,9 +706,7 @@
        clone the full set of slides, the loop point is invisible.
     ============================================================ */
     const track = document.getElementById('carouselTrack');
-    // Clone every original slide once and append the copies.
-    const originals = Array.from(track.children);
-    originals.forEach((node) => {
+    Array.from(track.children).forEach((node) => {
       const clone = node.cloneNode(true);
       clone.setAttribute('aria-hidden', 'true');
       track.appendChild(clone);
@@ -748,7 +748,7 @@
     });
 
     /* ============================================================
-       SCROLL REVEAL — gentle fade-in for each .reveal element.
+       SCROLL REVEAL — gentle fade-in
     ============================================================ */
     const revealEls = document.querySelectorAll('.reveal');
     if ('IntersectionObserver' in window) {
@@ -759,10 +759,9 @@
             io.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.15 });
+      }, { threshold: 0.12 });
       revealEls.forEach((el) => io.observe(el));
     } else {
-      // Fallback: reveal everything immediately.
       revealEls.forEach((el) => el.classList.add('is-visible'));
     }
   </script>
