@@ -25,16 +25,42 @@ const track = document.getElementById('carouselTrack');
 if (track) {
   const items = Array.from(track.children);
 
-  // Fisher-Yates: every ordering equally likely. Re-appending a node
-  // that is already in the DOM moves it, so this reorders in place.
-  for (let i = items.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [items[i], items[j]] = [items[j], items[i]];
-  }
-  items.forEach((node) => track.appendChild(node));
+  // Every slot declares its own proportions in the markup, so orientation
+  // is known before a single picture has loaded.
+  const ratioOf = (el) => {
+    const raw = el.style.aspectRatio || getComputedStyle(el).aspectRatio || '';
+    const pair = raw.match(/([\d.]+)\s*\/\s*([\d.]+)/);
+    if (pair) return parseFloat(pair[1]) / parseFloat(pair[2]);
+    const single = parseFloat(raw);
+    if (single > 0) return single;
+    const img = el.querySelector('img');
+    return img && img.naturalWidth ? img.naturalWidth / img.naturalHeight : 1;
+  };
+
+  // Fisher-Yates: every ordering equally likely.
+  const shuffle = (arr) => {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  };
+
+  // Group by orientation. Mixed at random, the strip jumped between a
+  // narrow and a wide slot on almost every picture; grouped, it changes
+  // width twice a lap. Order stays random inside each group, and which
+  // group leads is random too, so no two visits look the same.
+  const tall = [], wide = [];
+  items.forEach((el) => (ratioOf(el) < 1 ? tall : wide).push(el));
+  const ordered = (Math.random() < 0.5
+    ? [shuffle(tall), shuffle(wide)]
+    : [shuffle(wide), shuffle(tall)]).flat();
+
+  // Re-appending a node already in the DOM moves it, so this reorders in place.
+  ordered.forEach((node) => track.appendChild(node));
 
   // Second identical half, so the wrap point is invisible.
-  items.forEach((node) => {
+  ordered.forEach((node) => {
     const clone = node.cloneNode(true);
     clone.setAttribute('aria-hidden', 'true');
     track.appendChild(clone);
