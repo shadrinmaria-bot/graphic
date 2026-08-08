@@ -8,13 +8,13 @@
 
   <!-- ============================================================
        GOOGLE FONTS
-       Serif (headings): Inria Serif
-       Sans  (body/labels): DM Sans
+       Serif (headings): Inria Serif, with Frank Ruhl Libre for Hebrew
+       Sans  (body/labels): DM Sans, with Heebo for Hebrew
   ============================================================ -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400&family=DM+Sans:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Frank+Ruhl+Libre:wght@300;400;700&family=DM+Sans:wght@400;500&family=Heebo:wght@400;500&display=swap"
     rel="stylesheet"
   />
 
@@ -105,14 +105,15 @@
   ============================================================ -->
   <section class="carousel" aria-label="Selected imagery">
     <div class="carousel__track" id="carouselTrack">
-      <!-- // REPLACE WITH REAL IMAGES — 1:1 placeholders -->
-      <div class="carousel__item"><img src="assets/carousel-01.svg" alt="Work 01" /></div>
-      <div class="carousel__item"><img src="assets/carousel-02.svg" alt="Work 02" /></div>
-      <div class="carousel__item"><img src="assets/carousel-03.svg" alt="Work 03" /></div>
-      <div class="carousel__item"><img src="assets/carousel-04.svg" alt="Work 04" /></div>
-      <div class="carousel__item"><img src="assets/carousel-05.svg" alt="Work 05" /></div>
-      <div class="carousel__item"><img src="assets/carousel-06.svg" alt="Work 06" /></div>
-      <div class="carousel__item"><img src="assets/carousel-07.svg" alt="Work 07" /></div>
+      <!-- Drop your carousel art into assets/carousel/ and point these at it.
+           Add or remove items freely — the loop adapts. -->
+      <div class="carousel__item"><img src="assets/carousel/01.svg" alt="Work 01" /></div>
+      <div class="carousel__item"><img src="assets/carousel/02.svg" alt="Work 02" /></div>
+      <div class="carousel__item"><img src="assets/carousel/03.svg" alt="Work 03" /></div>
+      <div class="carousel__item"><img src="assets/carousel/04.svg" alt="Work 04" /></div>
+      <div class="carousel__item"><img src="assets/carousel/05.svg" alt="Work 05" /></div>
+      <div class="carousel__item"><img src="assets/carousel/06.svg" alt="Work 06" /></div>
+      <div class="carousel__item"><img src="assets/carousel/07.svg" alt="Work 07" /></div>
     </div>
   </section>
 
@@ -128,15 +129,16 @@
         <h2 class="works__heading">Things I made</h2>
       </div>
 
-      <!-- // REPLACE PLACEHOLDER IMAGES WITH REAL WORK -->
-      <a href="projects/aster-botanicals.html" class="work work--wide work--left reveal">
+      <!-- Covers come from assets/projects/<name>/01 — swap the src when you upload. -->
+
+      <a href="projects/domovoy.html" class="work work--wide work--left reveal">
         <figure class="work__frame" style="aspect-ratio: 4 / 3;">
-          <img src="assets/work-01.svg" alt="Aster Botanicals" />
+          <img src="assets/projects/domovoy/01.svg" alt="דומובוי עולה לארץ" />
         </figure>
         <div class="work__meta">
           <span class="work__index">01</span>
-          <h3 class="work__title">Aster Botanicals</h3>
-          <span class="work__tag">Brand Identity</span>
+          <h3 class="work__title" lang="he" dir="auto">דומובוי עולה לארץ</h3>
+          <span class="work__tag">[ Category ]</span>
         </div>
         <!-- // Decorative sprig — fills the empty ground beside the piece -->
         <img class="work__sprig" style="--sprig-top: 56%;"
@@ -144,14 +146,14 @@
              loading="lazy" decoding="async" />
       </a>
 
-      <a href="projects/field-notes.html" class="work work--narrow work--right reveal">
+      <a href="projects/honeest.html" class="work work--narrow work--right reveal">
         <figure class="work__frame" style="aspect-ratio: 4 / 5;">
-          <img src="assets/work-02.svg" alt="Field Notes" />
+          <img src="assets/projects/honeest/01.svg" alt="Honeest" />
         </figure>
         <div class="work__meta">
           <span class="work__index">02</span>
-          <h3 class="work__title">Field Notes</h3>
-          <span class="work__tag">Editorial Illustration</span>
+          <h3 class="work__title" dir="auto">Honeest</h3>
+          <span class="work__tag">[ Category ]</span>
         </div>
         <!-- // Decorative sprig — fills the empty ground beside the piece -->
         <img class="work__sprig" style="--sprig-top: 42%;"
@@ -159,14 +161,14 @@
              loading="lazy" decoding="async" />
       </a>
 
-      <a href="projects/sunday-press.html" class="work work--full work--right reveal">
+      <a href="projects/t2med.html" class="work work--full work--right reveal">
         <figure class="work__frame" style="aspect-ratio: 16 / 9;">
-          <img src="assets/work-03.svg" alt="Sunday Press" />
+          <img src="assets/projects/t2med/01.svg" alt="T2Med" />
         </figure>
         <div class="work__meta">
           <span class="work__index">03</span>
-          <h3 class="work__title">Sunday Press</h3>
-          <span class="work__tag">Packaging</span>
+          <h3 class="work__title" dir="auto">T2Med</h3>
+          <span class="work__tag">[ Category ]</span>
         </div>
         <!-- // Decorative sprig — fills the empty ground beside the piece -->
         <img class="work__sprig" style="--sprig-top: 50%;"
@@ -174,14 +176,14 @@
              loading="lazy" decoding="async" />
       </a>
 
-      <a href="projects/ochre-studio.html" class="work work--medium work--left reveal">
+      <a href="projects/hadelet-haptucha.html" class="work work--medium work--left reveal">
         <figure class="work__frame" style="aspect-ratio: 1 / 1;">
-          <img src="assets/work-04.svg" alt="Ochre Studio" />
+          <img src="assets/projects/hadelet-haptucha/01.svg" alt="הדלת הפתוחה" />
         </figure>
         <div class="work__meta">
           <span class="work__index">04</span>
-          <h3 class="work__title">Ochre Studio</h3>
-          <span class="work__tag">Visual System</span>
+          <h3 class="work__title" lang="he" dir="auto">הדלת הפתוחה</h3>
+          <span class="work__tag">[ Category ]</span>
         </div>
         <!-- // Decorative sprig — fills the empty ground beside the piece -->
         <img class="work__sprig" style="--sprig-top: 44%;"
@@ -189,14 +191,14 @@
              loading="lazy" decoding="async" />
       </a>
 
-      <a href="projects/marginalia.html" class="work work--medium work--right reveal">
+      <a href="projects/chik-chak.html" class="work work--medium work--right reveal">
         <figure class="work__frame" style="aspect-ratio: 3 / 4;">
-          <img src="assets/work-05.svg" alt="Marginalia" />
+          <img src="assets/projects/chik-chak/01.svg" alt="צ'יק צ'אק" />
         </figure>
         <div class="work__meta">
           <span class="work__index">05</span>
-          <h3 class="work__title">Marginalia</h3>
-          <span class="work__tag">Poster Series</span>
+          <h3 class="work__title" lang="he" dir="auto">צ'יק צ'אק</h3>
+          <span class="work__tag">[ Category ]</span>
         </div>
         <!-- // Decorative sprig — fills the empty ground beside the piece -->
         <img class="work__sprig" style="--sprig-top: 58%;"
