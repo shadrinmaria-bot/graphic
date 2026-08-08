@@ -47,3 +47,28 @@ detail row, alongside the year.
 
 Only the writing: the one-line lead under each title, and the
 description paragraphs. Both are marked with `[ ... ]` on the page.
+
+## Export sizes
+
+Measured from the live layout — this is the most any slot ever shows,
+on a 2560px screen:
+
+| Slot                | Shown at | Export at        |
+|---------------------|----------|------------------|
+| Carousel item       | 270 px   | **800 px** square |
+| Home page card      | 769 px   | 2000 px long side |
+| Gallery, full width | 1068 px  | 2000 px long side |
+| Gallery, half width | 518 px   | 2000 px long side |
+| Project cover       | full width | 2400 px wide    |
+
+So: **800 px for the carousel, 2000 px for everything else**, JPG at
+quality 85. That lands around 100 KB and 500 KB per file.
+
+Exporting larger does not make anything look better — the browser
+just scales it back down to the sizes above on every page load. It
+only makes the page slower.
+
+GitHub's web uploader rejects files over 25 MB. A full-resolution PNG
+export easily passes that; the same picture as a 2000 px JPG will not.
+PNG is the usual culprit — use JPG for photographs, and keep PNG only
+where transparency is needed (like the p1–p5 sprigs).
