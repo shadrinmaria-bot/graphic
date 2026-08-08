@@ -201,9 +201,17 @@ a { color: inherit; text-decoration: none; }
   height: auto;
   will-change: transform;
 }
-.hero__shape--circle  { left: 31.562%; top: 46.319%; width: 3.008%; animation: drift-a 11s ease-in-out infinite; }
-.hero__shape--pyramid { left: 26.680%; top: 52.292%; width: 3.594%; animation: drift-b 14s ease-in-out infinite; }
-.hero__shape--star    { left: 61.797%; top: 43.125%; width: 3.242%; animation: drift-c  9s ease-in-out infinite; }
+/* Lifted out of the artwork — coordinates are the originals. */
+.hero__shape--circle   { left: 31.562%; top: 46.319%; width: 3.008%; animation: drift-a 11s ease-in-out      0s infinite; }
+.hero__shape--pyramid  { left: 26.680%; top: 52.292%; width: 3.594%; animation: drift-b 14s ease-in-out     -2s infinite; }
+.hero__shape--star     { left: 61.797%; top: 43.125%; width: 3.242%; animation: drift-c  9s ease-in-out      0s infinite; }
+.hero__shape--cylinder { left: 67.383%; top: 46.528%; width: 3.867%; animation: drift-d 16s ease-in-out     -4s infinite; }
+
+/* Added decoration, sitting in the empty ground around the composition. */
+.hero__shape--f-cube    { left: 12.500%; top: 63.000%; width: 4.000%; animation: drift-b 19s ease-in-out    -6s infinite; }
+.hero__shape--f-pyramid { left: 82.000%; top: 60.000%; width: 3.400%; animation: drift-e 15s ease-in-out    -1s infinite; }
+.hero__shape--f-circle  { left: 36.000%; top: 87.500%; width: 2.300%; animation: drift-a 13s ease-in-out    -5s infinite; }
+.hero__shape--f-star    { left: 64.000%; top: 88.000%; width: 2.600%; animation: drift-c 12s ease-in-out    -3s infinite; }
 
 /* Percentage translations resolve against each shape's own box, so the
    drift stays proportional however large the hero happens to be drawn. */
@@ -220,6 +228,15 @@ a { color: inherit; text-decoration: none; }
 @keyframes drift-c {
   0%, 100% { transform: translate(0, 0) rotate(0deg); }
   50%      { transform: translate(4%, -14%) rotate(12deg); }
+}
+@keyframes drift-d {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  35%      { transform: translate(-5%, -9%) rotate(3deg); }
+  75%      { transform: translate(4%, -13%) rotate(-3deg); }
+}
+@keyframes drift-e {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50%      { transform: translate(-3%, -15%) rotate(6deg); }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero__shape { animation: none; }
@@ -384,15 +401,18 @@ a { color: inherit; text-decoration: none; }
    5. ABOUT
 ============================================================ */
 .about {
-  padding-block: clamp(3.5rem, 9vw, 7rem);
+  padding-block: clamp(2.75rem, 6vw, 4.5rem);
   text-align: center;
 }
 .about__text {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: clamp(1.3rem, 3vw, 2rem);
+  font-size: clamp(1.15rem, 2.4vw, 1.7rem);
   line-height: 1.35;
-  max-width: 24ch;
+  /* Wide enough to set the sentence in two lines rather than four. */
+  max-width: 47ch;
+  /* Evens out the two lines instead of leaving a short second one. */
+  text-wrap: balance;
   margin-inline: auto;
 }
 .about__text em { font-style: italic; }
