@@ -17,16 +17,41 @@ if (nav) {
 }
 
 /* ------------------------------------------------------------
-   CAROUSEL (home page only) — duplicate the items so the CSS
-   marquee, which travels -50%, loops with no visible seam.
+   CAROUSEL (home page only)
+   The strip is shuffled on every load, then duplicated so the CSS
+   marquee — which travels -50% — loops with no visible seam.
 ------------------------------------------------------------ */
 const track = document.getElementById('carouselTrack');
 if (track) {
-  Array.from(track.children).forEach((node) => {
+  const items = Array.from(track.children);
+
+  // Fisher-Yates: every ordering equally likely. Re-appending a node
+  // that is already in the DOM moves it, so this reorders in place.
+  for (let i = items.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [items[i], items[j]] = [items[j], items[i]];
+  }
+  items.forEach((node) => track.appendChild(node));
+
+  // Second identical half, so the wrap point is invisible.
+  items.forEach((node) => {
     const clone = node.cloneNode(true);
     clone.setAttribute('aria-hidden', 'true');
     track.appendChild(clone);
   });
+
+  // Pace the loop by distance rather than a fixed duration. With a fixed
+  // duration the strip would race as more pictures are added, since it
+  // still has to cover the whole track in the same time.
+  const PX_PER_SECOND = 38;
+  const setPace = () => {
+    const half = track.scrollWidth / 2;
+    if (!half) return;
+    const secs = (half / PX_PER_SECOND).toFixed(1) + 's';
+    if (track.style.animationDuration !== secs) track.style.animationDuration = secs;
+  };
+  setPace();
+  window.addEventListener('resize', setPace, { passive: true });
 }
 
 /* ------------------------------------------------------------
