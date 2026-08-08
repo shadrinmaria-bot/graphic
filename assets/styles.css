@@ -204,41 +204,45 @@ a { color: inherit; text-decoration: none; }
   will-change: transform;
 }
 /* Lifted out of the artwork — coordinates are the originals. */
-.hero__shape--circle   { left: 31.562%; top: 46.319%; width: 3.008%; animation: drift-a 11s ease-in-out      0s infinite; }
-.hero__shape--pyramid  { left: 26.680%; top: 52.292%; width: 3.594%; animation: drift-b 14s ease-in-out     -2s infinite; }
-.hero__shape--star     { left: 61.797%; top: 43.125%; width: 3.242%; animation: drift-c  9s ease-in-out      0s infinite; }
-.hero__shape--cylinder { left: 67.383%; top: 46.528%; width: 3.867%; animation: drift-d 16s ease-in-out     -4s infinite; }
+.hero__shape--circle   { left: 31.562%; top: 46.319%; width: 3.008%; animation: drift-a  8s ease-in-out      0s infinite; }
+.hero__shape--pyramid  { left: 26.680%; top: 52.292%; width: 3.594%; animation: drift-b 10s ease-in-out     -2s infinite; }
+.hero__shape--star     { left: 61.797%; top: 43.125%; width: 3.242%; animation: drift-c  7s ease-in-out      0s infinite; }
+.hero__shape--cylinder { left: 67.383%; top: 46.528%; width: 3.867%; animation: drift-d 11s ease-in-out     -4s infinite; }
 
 /* Added decoration, sitting in the empty ground around the composition. */
-.hero__shape--f-cube    { left: 12.500%; top: 63.000%; width: 4.000%; animation: drift-b 19s ease-in-out    -6s infinite; }
-.hero__shape--f-pyramid { left: 82.000%; top: 60.000%; width: 3.400%; animation: drift-e 15s ease-in-out    -1s infinite; }
-.hero__shape--f-circle  { left: 36.000%; top: 87.500%; width: 2.300%; animation: drift-a 13s ease-in-out    -5s infinite; }
-.hero__shape--f-star    { left: 64.000%; top: 88.000%; width: 2.600%; animation: drift-c 12s ease-in-out    -3s infinite; }
+.hero__shape--f-cube    { left: 12.500%; top: 63.000%; width: 4.000%; animation: drift-b 13s ease-in-out    -6s infinite; }
+.hero__shape--f-pyramid { left: 82.000%; top: 60.000%; width: 3.400%; animation: drift-e 10s ease-in-out    -1s infinite; }
+.hero__shape--f-circle  { left: 36.000%; top: 87.500%; width: 2.300%; animation: drift-a  9s ease-in-out    -5s infinite; }
+.hero__shape--f-star    { left: 64.000%; top: 88.000%; width: 2.600%; animation: drift-c  8s ease-in-out    -3s infinite; }
 
 /* Percentage translations resolve against each shape's own box, so the
-   drift stays proportional however large the hero happens to be drawn. */
+   drift stays proportional however large the hero happens to be drawn.
+   These used to move about 13% of a 40px shape over 9 to 19 seconds,
+   roughly half a pixel a second, which reads as a rendering fault rather
+   than as motion. The travel is now about 50% and the loops are shorter,
+   so a shape covers a fifth of its own width in a second or two. */
 @keyframes drift-a {
   0%, 100% { transform: translate(0, 0); }
-  33%      { transform: translate(6%, -13%); }
-  66%      { transform: translate(-4%, -6%); }
+  33%      { transform: translate(22%, -48%); }
+  66%      { transform: translate(-16%, -22%); }
 }
 @keyframes drift-b {
   0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  40%      { transform: translate(-6%, -10%) rotate(-5deg); }
-  70%      { transform: translate(3%, -4%) rotate(2deg); }
+  40%      { transform: translate(-24%, -40%) rotate(-16deg); }
+  70%      { transform: translate(12%, -16%) rotate(7deg); }
 }
 @keyframes drift-c {
   0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  50%      { transform: translate(4%, -14%) rotate(12deg); }
+  50%      { transform: translate(16%, -50%) rotate(30deg); }
 }
 @keyframes drift-d {
   0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  35%      { transform: translate(-5%, -9%) rotate(3deg); }
-  75%      { transform: translate(4%, -13%) rotate(-3deg); }
+  35%      { transform: translate(-20%, -34%) rotate(11deg); }
+  75%      { transform: translate(16%, -46%) rotate(-11deg); }
 }
 @keyframes drift-e {
   0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  50%      { transform: translate(-3%, -15%) rotate(6deg); }
+  50%      { transform: translate(-14%, -52%) rotate(18deg); }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero__shape { animation: none; }
