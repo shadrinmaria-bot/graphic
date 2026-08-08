@@ -105,15 +105,21 @@
   ============================================================ -->
   <section class="carousel" aria-label="Selected imagery">
     <div class="carousel__track" id="carouselTrack">
-      <!-- Drop your carousel art into assets/carousel/ and point these at it.
-           Add or remove items freely — the loop adapts. -->
-      <div class="carousel__item"><img src="assets/carousel/01.svg" alt="Work 01" /></div>
-      <div class="carousel__item"><img src="assets/carousel/02.svg" alt="Work 02" /></div>
-      <div class="carousel__item"><img src="assets/carousel/03.svg" alt="Work 03" /></div>
-      <div class="carousel__item"><img src="assets/carousel/04.svg" alt="Work 04" /></div>
-      <div class="carousel__item"><img src="assets/carousel/05.svg" alt="Work 05" /></div>
-      <div class="carousel__item"><img src="assets/carousel/06.svg" alt="Work 06" /></div>
-      <div class="carousel__item"><img src="assets/carousel/07.svg" alt="Work 07" /></div>
+      <!-- Art lives in assets/carousel/. Order is shuffled on every load,
+           so the sequence here does not matter. Add or remove freely.
+           aspect-ratio holds each slot open at its true proportions before
+           the picture arrives, so nothing shifts and the strip can be
+           measured for pacing straight away. -->
+      <div class="carousel__item" style="aspect-ratio: 1267 / 1800;"><img src="assets/carousel/koschei-the-deathless.jpg" alt="Koschei The Deathless" loading="lazy" decoding="async" /></div>
+      <div class="carousel__item" style="aspect-ratio: 1267 / 1800;"><img src="assets/carousel/babayaga-maria.jpg" alt="Babayaga Maria" loading="lazy" decoding="async" /></div>
+      <div class="carousel__item" style="aspect-ratio: 1267 / 1800;"><img src="assets/carousel/vodnik.jpg" alt="Vodnik" loading="lazy" decoding="async" /></div>
+      <div class="carousel__item" style="aspect-ratio: 1273 / 1800;"><img src="assets/carousel/collage.jpg" alt="Collage" loading="lazy" decoding="async" /></div>
+      <div class="carousel__item" style="aspect-ratio: 1273 / 1800;"><img src="assets/carousel/brief-2-digital-art.jpg" alt="Brief 2 Digital Art" loading="lazy" decoding="async" /></div>
+      <div class="carousel__item" style="aspect-ratio: 1273 / 1800;"><img src="assets/carousel/maria-brief-madonna.jpg" alt="Maria Brief Madonna" loading="lazy" decoding="async" /></div>
+      <div class="carousel__item" style="aspect-ratio: 1800 / 1275;"><img src="assets/carousel/vinyl-record-mockup.jpg" alt="Vinyl Record Mockup" loading="lazy" decoding="async" /></div>
+      <div class="carousel__item" style="aspect-ratio: 1800 / 1350;"><img src="assets/carousel/front-2.jpg" alt="Front 2" loading="lazy" decoding="async" /></div>
+      <div class="carousel__item" style="aspect-ratio: 1800 / 1350;"><img src="assets/carousel/back.jpg" alt="Back" loading="lazy" decoding="async" /></div>
+      <div class="carousel__item" style="aspect-ratio: 1800 / 1350;"><img src="assets/carousel/art-2.jpg" alt="Art 2" loading="lazy" decoding="async" /></div>
     </div>
   </section>
 

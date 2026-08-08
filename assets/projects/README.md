@@ -55,14 +55,18 @@ on a 2560px screen:
 
 | Slot                | Shown at | Export at        |
 |---------------------|----------|------------------|
-| Carousel item       | 270 px   | **800 px** square |
+| Carousel item       | 270 px   | 1800 px long side |
 | Home page card      | 769 px   | 2000 px long side |
 | Gallery, full width | 1068 px  | 2000 px long side |
 | Gallery, half width | 518 px   | 2000 px long side |
 | Project cover       | full width | 2400 px wide    |
 
-So: **800 px for the carousel, 2000 px for everything else**, JPG at
-quality 85. That lands around 100 KB and 500 KB per file.
+So: **1800-2000 px on the long side**, JPG at quality 88. That lands
+around 200-600 KB per file.
+
+The carousel strip only shows 270 px, but clicking opens the lightbox
+at up to 90vw / 88vh — about 1700 px on a large screen. That is why
+carousel art needs full size too, not a thumbnail.
 
 Exporting larger does not make anything look better — the browser
 just scales it back down to the sizes above on every page load. It

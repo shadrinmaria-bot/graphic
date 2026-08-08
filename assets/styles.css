@@ -311,10 +311,13 @@ a { color: inherit; text-decoration: none; }
   /* -50% because the track holds two identical halves */
   to   { transform: translateX(-50%); }
 }
+/* Fixed height, natural width: the work is a mix of tall A4 pieces and
+   4:3 mockups, and a square crop would cut a third off the tall ones.
+   Letting each keep its own proportions shows every piece whole and
+   gives the strip an organic, uneven rhythm. */
 .carousel__item {
   flex: 0 0 auto;
-  width: clamp(170px, 22vw, 270px);
-  aspect-ratio: 1 / 1;
+  height: clamp(180px, 21vw, 290px);
   overflow: hidden;
   cursor: pointer;
   background: var(--tint);
@@ -325,6 +328,7 @@ a { color: inherit; text-decoration: none; }
 .carousel__item img {
   width: 100%;
   height: 100%;
+  /* The slot is set to each picture's own ratio, so cover crops nothing. */
   object-fit: cover;
 }
 

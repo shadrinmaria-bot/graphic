@@ -52,6 +52,8 @@ if (track) {
   };
   setPace();
   window.addEventListener('resize', setPace, { passive: true });
+  // Belt and braces: if a slot's size settles later than expected, remeasure.
+  if ('ResizeObserver' in window) new ResizeObserver(setPace).observe(track);
 }
 
 /* ------------------------------------------------------------
