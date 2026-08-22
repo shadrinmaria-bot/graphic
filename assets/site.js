@@ -7,16 +7,6 @@
 ============================================================ */
 
 /* ------------------------------------------------------------
-   NAV — solid background once scrolled past the top
------------------------------------------------------------- */
-const nav = document.getElementById('nav');
-if (nav) {
-  const onScroll = () => nav.classList.toggle('is-solid', window.scrollY > 40);
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-}
-
-/* ------------------------------------------------------------
    CAROUSEL (home page only)
    The strip is shuffled on every load, then duplicated so the CSS
    marquee — which travels -50% — loops with no visible seam.
