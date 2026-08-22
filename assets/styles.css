@@ -556,6 +556,31 @@ a { color: inherit; text-decoration: none; }
 }
 .about__text em { font-style: italic; }
 
+/* Both languages sit side by side so a reader sees at a glance that both
+   exist. The links are given real height so they stay a usable target. */
+.about__cv {
+  margin-top: var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  font-size: var(--text-xs);
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+}
+.about__cv-label { color: var(--ink-soft); font-weight: 600; }
+.about__cv-sep   { color: var(--ink-soft); }
+.about__cv a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  font-weight: 600;
+  border-bottom: 1px solid var(--accent);
+  transition: border-color 0.3s ease;
+}
+.about__cv a:hover { border-color: var(--ink); }
+.about__cv a[lang="he"] { letter-spacing: 0; }
+
 /* ============================================================
    6. FOOTER
 ============================================================ */
