@@ -118,7 +118,10 @@ if (lightbox) {
   const stage = document.getElementById('lightboxStage');
   const closeBtn = document.getElementById('lightboxClose');
 
+  let opener = null;   // where to put focus back when it closes
+
   const openLightbox = (source) => {
+    opener = source;
     stage.replaceChildren(); // clear whatever was shown before
 
     let node;
@@ -141,22 +144,47 @@ if (lightbox) {
 
     lightbox.classList.add('is-open');
     document.body.style.overflow = 'hidden'; // lock scroll while open
+    closeBtn.focus();   // so Escape and the close button are reachable at once
   };
 
   const closeLightbox = () => {
     lightbox.classList.remove('is-open');
     document.body.style.overflow = '';
     stage.replaceChildren(); // also stops any video playback
+    // Put focus back where it came from, so a keyboard visitor carries on
+    // from the picture they opened rather than from the top of the page.
+    if (opener && opener.isConnected) opener.focus();
+    opener = null;
   };
+
+  const OPENERS = '.carousel__item img, .media > img, .media > video';
+
+  // An <img> takes no focus of its own, so until now the lightbox could
+  // only be reached with a mouse. Announce each one as a button and put it
+  // in the tab order. The carousel clones are aria-hidden duplicates, so
+  // they stay out of it — otherwise every picture would be tabbed twice.
+  document.querySelectorAll(OPENERS).forEach((el) => {
+    if (el.closest('[aria-hidden="true"]')) return;
+    el.tabIndex = 0;
+    el.setAttribute('role', 'button');
+    const what = el.alt || 'this piece';
+    el.setAttribute('aria-label', `Open ${what} larger`);
+  });
 
   // One delegated listener covers carousel images and gallery media,
   // including the carousel clones created above.
   document.addEventListener('click', (e) => {
-    const source = e.target.closest(
-      '.carousel__item img, .media > img, .media > video'
-    );
+    const source = e.target.closest(OPENERS);
     if (!source) return;
     e.preventDefault();
+    openLightbox(source);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    const source = e.target.closest && e.target.closest(OPENERS);
+    if (!source) return;
+    e.preventDefault();   // stops Space from scrolling the page
     openLightbox(source);
   });
 
