@@ -92,18 +92,21 @@ document.querySelectorAll('.gallery').forEach((gallery) => {
   const items = Array.from(gallery.children);
   if (!items.length) return;
 
-  // Walk the grid counting columns used. A half-width item that lands on a
-  // fresh row with nothing to follow it would sit alone, so widen it.
-  // Counting beats checking the previous item: that only recognised one
-  // particular pattern, and galleries here mix full and half freely.
+  // Walk the grid counting columns used. A half-width item that opens a row
+  // with no half-width item behind it has nothing to share the row with, so
+  // widen it. Checking what follows, rather than only the very last item,
+  // matters because a gallery can hold a lone half anywhere in the sequence:
+  // pulling two pictures out of a project left exactly that, and the old rule
+  // saw only one of the two holes it made.
+  const isFull = (el) => el.classList.contains('media--full');
   let col = 0;
   items.forEach((el, i) => {
-    const isFull = el.classList.contains('media--full');
-    if (i === items.length - 1 && !isFull && col % 2 === 0) {
+    if (!isFull(el) && col % 2 === 0 && !(items[i + 1] && !isFull(items[i + 1]))) {
       el.classList.add('media--full');
+      col += 2;
       return;
     }
-    col += isFull ? 2 : 1;
+    col += isFull(el) ? 2 : 1;
   });
 });
 
