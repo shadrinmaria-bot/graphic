@@ -514,13 +514,7 @@ a { color: inherit; text-decoration: none; }
 ============================================================ */
 .about {
   padding-block: clamp(2.75rem, 6vw, 4.5rem);
-}
-/* Sits on the same left margin as the works above it. Centred, it read as
-   a caption under the grid; on the margin it reads as her own line. */
-.about__label {
-  display: block;
-  color: var(--ink-soft);
-  margin-bottom: var(--space-md);
+  text-align: center;
 }
 .about__text {
   font-family: var(--serif);
@@ -531,21 +525,16 @@ a { color: inherit; text-decoration: none; }
   max-width: 62ch;
   /* Evens out the two lines instead of leaving a short second one. */
   text-wrap: balance;
+  margin-inline: auto;
 }
 .about__text em { font-style: italic; }
 
 /* ============================================================
    6. FOOTER
 ============================================================ */
-/* Left-aligned like everything above it. Centred, the closing block read
-   as a template footer bolted onto an otherwise asymmetric page. */
 .footer {
   padding-block: clamp(3rem, 7vw, 5.5rem);
-}
-.footer__label {
-  display: block;
-  color: var(--ink-soft);
-  margin-bottom: var(--space-md);
+  text-align: center;
 }
 .footer__email {
   font-family: var(--serif);
@@ -561,13 +550,11 @@ a { color: inherit; text-decoration: none; }
 .footer__email:hover { border-color: var(--accent); }
 .footer__social {
   display: flex;
+  justify-content: center;
   /* Each mark is cropped to its ink, so its bottom edge is its baseline.
      Aligning to flex-end therefore sits both marks on a shared baseline. */
   align-items: flex-end;
   gap: var(--space-sm);
-  /* Pulls the row back onto the page margin, cancelling the padding that
-     grows the tap targets. */
-  margin-inline-start: -6px;
   margin-bottom: var(--space-lg);
 }
 .footer__social a {
