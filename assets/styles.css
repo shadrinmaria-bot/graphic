@@ -836,7 +836,11 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: var(--track-caps);
   text-transform: uppercase;
   color: var(--ink-soft);
-  margin-top: var(--space-2xs);
+  /* The figure's own tint is the placeholder shown while a picture loads.
+     A caption left sitting on it drops to 4.13:1; on the page ground the
+     same tone reads at 4.60:1, so the caption states its own ground. */
+  background: var(--bg);
+  padding-top: var(--space-2xs);
 }
 
 /* Link through to the next project */

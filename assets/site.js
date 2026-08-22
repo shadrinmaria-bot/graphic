@@ -126,13 +126,17 @@ if (lightbox) {
 
     let node;
     if (source.tagName === 'VIDEO') {
-      // Rebuild the video with controls; inline gallery clips have none.
+      // Rebuild the video with controls; the short inline clips have none.
       node = document.createElement('video');
       node.src = source.currentSrc || source.src;
       node.controls = true;
       node.autoplay = true;
-      node.loop = true;
       node.playsInline = true;
+      // Carry the source's own looping rather than forcing it. The interface
+      // clips are a few silent seconds and should loop; the promo film runs
+      // for nearly two minutes with sound, and restarting it would be rude.
+      node.loop = source.loop;
+      node.muted = source.muted;
     } else {
       node = document.createElement('img');
       node.src = source.currentSrc || source.src;

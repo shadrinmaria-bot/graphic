@@ -60,6 +60,19 @@ thinking, which finals cannot.
 Only the writing: the one-line lead under each title, and the
 description paragraphs. Both are marked with `[ ... ]` on the page.
 
+## Video
+
+Name it in the numbering like everything else (`07.mp4`). Upload the file
+you have and it will be re-encoded: the ChikChak promo came in at 13.1 MB
+and ships at 8.0 MB with no visible difference, mostly by bringing the
+audio down from 317 kb/s, which is far more than a voiceover needs.
+
+Short silent clips of an interface autoplay on a loop with no controls.
+Anything with sound, or longer than about twenty seconds, gets controls
+and a poster frame instead and waits for the viewer. Only the file header
+is fetched until somebody presses play, so a long film costs nothing to
+the people who scroll past it.
+
 ## Cut-out artwork (labels, die lines)
 
 Artwork with a transparent background must keep its alpha: flattening it
