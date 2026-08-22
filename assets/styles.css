@@ -888,8 +888,24 @@ a { color: inherit; text-decoration: none; }
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(1rem, 2.5vw, 2rem);
-  align-items: start;
+  /* Stretch, not start: two pictures sharing a row are rarely the same
+     proportion, and left to their natural heights the shorter one leaves a
+     hole under it. The shorter one now fills the row and takes the crop.
+     Where a pair already matches, which is most of them, nothing is cropped
+     at all, so this only acts where there is a hole to close. */
+  align-items: stretch;
   padding-bottom: clamp(3rem, 7vw, 5rem);
+}
+.gallery .media {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.gallery .media > img,
+.gallery .media > video {
+  flex: 1 1 auto;
+  min-height: 0;
+  object-fit: cover;
 }
 .media {
   grid-column: span 1;
