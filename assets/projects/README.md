@@ -4,11 +4,11 @@ One folder per project. Upload photos into the matching folder:
 
 | # | Project              | Folder                              | Page                            |
 |---|----------------------|-------------------------------------|---------------------------------|
-| 1 | דומובוי עולה לארץ    | `assets/projects/domovoy/`          | `projects/domovoy.html`          |
-| 2 | Honeest              | `assets/projects/honeest/`          | `projects/honeest.html`          |
-| 3 | T2Med                | `assets/projects/t2med/`            | `projects/t2med.html`            |
-| 4 | הדלת הפתוחה          | `assets/projects/hadelet-haptucha/` | `projects/hadelet-haptucha.html` |
-| 5 | צ'יק צ'אק            | `assets/projects/chik-chak/`        | `projects/chik-chak.html`        |
+| 1 | Honeest              | `assets/projects/honeest/`          | `projects/honeest.html`          |
+| 2 | T2Med                | `assets/projects/t2med/`            | `projects/t2med.html`            |
+| 3 | דומובוי עולה לארץ    | `assets/projects/domovoy/`          | `projects/domovoy.html`          |
+| 4 | צ'יק צ'אק            | `assets/projects/chik-chak/`        | `projects/chik-chak.html`        |
+| 5 | הדלת הפתוחה          | `assets/projects/hadelet-haptucha/` | `projects/hadelet-haptucha.html` |
 
 ## Naming
 
@@ -34,14 +34,26 @@ square works best. Currently seven placeholders.
 
 | # | Project              | Category                     | Year |
 |---|----------------------|------------------------------|------|
-| 1 | דומובוי עולה לארץ    | Illustration & Storytelling  | 2026 |
-| 2 | Honeest              | Branding & Identity          | 2026 |
-| 3 | T2Med                | Branding & Identity          | 2025 |
-| 4 | הדלת הפתוחה          | Design                       | 2025 |
-| 5 | צ'יק צ'אק            | Branding & Identity          | 2026 |
+| 1 | Honeest              | Branding & Identity          | 2026 |
+| 2 | T2Med                | Branding & Identity          | 2025 |
+| 3 | דומובוי עולה לארץ    | Illustration & Storytelling  | 2026 |
+| 4 | צ'יק צ'אק            | Branding & Identity          | 2026 |
+| 5 | הדלת הפתוחה          | Design                       | 2025 |
 
 The category shows on the home page card and in the project page's
 detail row, alongside the year.
+
+## Adding to a project that already has photos
+
+Carry on from the last number. Honeest currently ends at `07.jpg`, so
+new packaging and label shots go in as `08.jpg`, `09.jpg`, `10.jpg`
+and so on. Nothing needs renaming, and the gallery grows to fit: it
+alternates full and half width rows on its own, and a lone item at
+the end is widened automatically.
+
+Process shots earn their place here. A label at three sizes, a
+rejected direction, a printed sheet before it was cut: those show the
+thinking, which finals cannot.
 
 ## Still to fill in
 
