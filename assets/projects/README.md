@@ -60,6 +60,17 @@ thinking, which finals cannot.
 Only the writing: the one-line lead under each title, and the
 description paragraphs. Both are marked with `[ ... ]` on the page.
 
+## Cut-out artwork (labels, die lines)
+
+Artwork with a transparent background must keep its alpha: flattening it
+to JPG paints a background behind the cut-out shape. Save those as WebP
+instead of PNG. WebP keeps transparency and is far smaller: the ten
+Honeest label and die line files came to 7.1 MB as PNG and 1.6 MB as
+WebP, with no difference visible at the size the gallery renders them.
+
+Every browser in use has supported WebP since 2020. The original PNGs
+stay in the repository history if they are ever needed back.
+
 ## Export sizes
 
 Measured from the live layout — this is the most any slot ever shows,
