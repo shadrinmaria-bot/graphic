@@ -33,6 +33,21 @@ Images: 1800-2000 px on the long side, JPG q88 (q90 for flat colour with
 hard edges). GitHub's web uploader rejects anything over 25 MB, and git
 itself refuses files over 100 MB.
 
+## Cache
+
+The stylesheet and script are linked with a hash of their own contents
+(`assets/styles.css?v=cab524e5`). Without it a browser keeps serving the
+copy it already has, so new markup lands against old rules: the page
+still renders, just wrongly, and it reads as a design fault rather than
+a stale file. That is exactly how a two-column layout came back looking
+like a broken one-column layout.
+
+**After editing `assets/styles.css` or `assets/site.js`, run:**
+
+    python3 tools/stamp-assets.py
+
+It rewrites the links on every page. Commit the result with the change.
+
 ## Hebrew
 
 Inria Serif and DM Sans carry no Hebrew; Frank Ruhl Libre and Heebo pick
