@@ -462,15 +462,21 @@ a { color: inherit; text-decoration: none; }
 .work:first-of-type { margin-top: 0; }
 
 /* Asymmetric widths + alignment give each piece its own breathing room */
-.work--wide    { width: min(100%, 64%); }
-.work--medium  { width: min(100%, 52%); }
+.work--wide    { width: min(100%, 56%); }
+.work--medium  { width: min(100%, 46%); }
 .work--narrow  { width: min(100%, 43%); }
-.work--full    { width: min(100%, 72%); }
+.work--full    { width: min(100%, 64%); }
 .work--left    { margin-right: auto; }
 .work--right   { margin-left: auto; }
 .work--center  { margin-inline: auto; }
 
+/* One frame for every piece. The ratios used to be set per card, which meant
+   a wide photograph in a tall frame: Honeest was losing 55% of the picture
+   and standing 854px tall, the biggest thing on the page. A square treats a
+   landscape and a portrait source alike, and the covers are cut to it, so
+   nothing is cropped in the browser at all. */
 .work__frame {
+  aspect-ratio: 1;
   overflow: hidden;
   background: var(--tint);
 }
@@ -503,16 +509,17 @@ a { color: inherit; text-decoration: none; }
    edge. Both numbers are a share of the piece's own width, so the channel
    is (100 − pieceWidth) / pieceWidth, and the inset is half of whatever
    the sprig does not use. Recompute the pair if you change a width. */
-.work--wide   .work__sprig { width: 31%; }   /* 64% piece → 56.3% channel */
-.work--narrow .work__sprig { width: 54%; }   /* 43% piece → 132.6% channel */
-.work--medium .work__sprig { width: 42%; }   /* 52% piece → 92.3% channel */
-.work--full   .work__sprig { width: 28%; }   /* 72% piece → 38.9% channel */
+.work--wide   .work__sprig { width: 35.5%; }  /* 212px, as before */
+.work--narrow .work__sprig { width: 54%; }
+.work--medium .work__sprig { width: 47.5%; }  /* 233px, as before */
+.work--full   .work__sprig { width: 31.4%; }  /* 215px, as before */
 
-.work--wide.work--left    .work__sprig { left: 100%;  margin-left: 12.6%; }
+/* Each offset centres the sprig in the channel left over beside the piece. */
+.work--wide.work--left    .work__sprig { left: 100%;  margin-left: 21.6%; }
 .work--narrow.work--right .work__sprig { right: 100%; margin-right: 39.3%; }
-.work--medium.work--left  .work__sprig { left: 100%;  margin-left: 25.1%; }
-.work--medium.work--right .work__sprig { right: 100%; margin-right: 25.1%; }
-.work--full.work--right   .work__sprig { right: 100%; margin-right: 5.5%; }
+.work--medium.work--left  .work__sprig { left: 100%;  margin-left: 35.0%; }
+.work--medium.work--right .work__sprig { right: 100%; margin-right: 35.0%; }
+.work--full.work--right   .work__sprig { right: 100%; margin-right: 12.4%; }
 
 .work__meta {
   display: flex;
