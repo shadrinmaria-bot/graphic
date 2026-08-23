@@ -376,8 +376,14 @@ a { color: inherit; text-decoration: none; }
 }
 .badge text {
   font-family: var(--sans);
-  font-size: 16px;          /* viewBox units — renders ~10.5px */
-  letter-spacing: 3.6px;
+  /* viewBox units, so this scales with the ring: 9.6 renders about 15px at
+     the widest the badge gets. Growing the badge for the portrait had
+     dragged the type up to 25px with it. The tracking opens up rather than
+     scaling down with the size, so the words still run most of the way
+     round: at the same proportion they would cover half the circle and the
+     ring would read as an arc. */
+  font-size: 9.6px;
+  letter-spacing: 7.2px;
   text-transform: uppercase;
   fill: var(--ink);
   font-weight: 500;
@@ -756,6 +762,10 @@ a { color: inherit; text-decoration: none; }
     right: var(--gutter);
     width: 150px;
   }
+  /* The type scales with the ring, so at 150px the desktop value would
+     render at 7px. This puts it back to about 11px, where the words are
+     still readable, with the tracking closed up to match. */
+  .badge text { font-size: 14.1px; letter-spacing: 5px; }
   .intro__text { padding-right: 166px; }
   .work__meta { flex-wrap: wrap; row-gap: 0.35rem; }
   .work__tag { width: 100%; }
