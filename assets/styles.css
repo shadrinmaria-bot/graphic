@@ -327,12 +327,46 @@ a { color: inherit; text-decoration: none; }
   margin-top: 0.85rem;
 }
 
-/* Rotating circular badge — circle stays 132px, text enlarged */
+/* The badge is a ring of type turning around a still portrait. Only the
+   ring carries the animation: a rotating photograph would be a novelty,
+   and a face has an up. */
 .badge {
-  width: 132px;
-  height: 132px;
+  position: relative;
+  width: 176px;
+  height: 176px;
   flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+}
+.badge__ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   animation: spin 30s linear infinite;
+}
+/* Sits here rather than with the other reduced-motion rules: both selectors
+   carry the same weight, so the later one wins and this has to follow the
+   animation it turns off. A ring that never stops is exactly what the
+   setting is for. */
+@media (prefers-reduced-motion: reduce) {
+  .badge__ring { animation: none; }
+}
+/* The type sits at radius 74 of 100 and stands about 8 units tall, so 56%
+   clears its inner edge with air to spare. The one round thing on a site
+   that is otherwise square on purpose, because it is the ring that makes
+   it round. */
+.badge__portrait {
+  position: relative;
+  width: 56%;
+  /* The width and height attributes on the tag reserve the right box while
+     the picture loads, but a specified height also outranks aspect-ratio.
+     This hands the height back to the ratio. */
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--tint);
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) {
@@ -346,7 +380,6 @@ a { color: inherit; text-decoration: none; }
   fill: var(--ink);
   font-weight: 500;
 }
-.badge__mark { fill: var(--accent); }
 
 /* ============================================================
    3. AUTO-SCROLLING CAROUSEL
@@ -719,10 +752,10 @@ a { color: inherit; text-decoration: none; }
     /* Offsets resolve against the padding box, so match the page gutter
        rather than sitting flush to the screen edge. */
     right: var(--gutter);
-    width: 108px;
-    height: 108px;
+    width: 132px;
+    height: 132px;
   }
-  .intro__text { padding-right: 120px; }
+  .intro__text { padding-right: 148px; }
   .work__meta { flex-wrap: wrap; row-gap: 0.35rem; }
   .work__tag { width: 100%; }
   .nav__links { gap: 0.9rem; }

@@ -28,7 +28,7 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="assets/styles.css?v=c9bbdc17" />
+  <link rel="stylesheet" href="assets/styles.css?v=bb558b8d" />
 </head>
 
 <body>
@@ -88,22 +88,23 @@
         </p>
       </div>
 
-      <!-- Rotating circular badge -->
-      <svg class="badge" viewBox="0 0 200 200" aria-hidden="true">
-        <defs>
-          <path id="badgeCircle"
-            d="M 100,100 m -74,0 a 74,74 0 1,1 148,0 a 74,74 0 1,1 -148,0" />
-        </defs>
-        <text>
-          <textPath href="#badgeCircle" startOffset="0%">
-            Graphic Designer · Illustrator ·
-          </textPath>
-        </text>
-        <!-- Four-point sparkle with concave sides -->
-        <path class="badge__mark"
-          d="M100 72 C102 92, 108 98, 128 100 C108 102, 102 108, 100 128
-             C98 108, 92 102, 72 100 C92 98, 98 92, 100 72 Z" />
-      </svg>
+      <!-- The portrait sits still inside the ring; only the ring turns.
+           Replace assets/portrait.jpg with the real photograph, square,
+           about 900px. Nothing else needs changing. -->
+      <div class="badge">
+        <svg class="badge__ring" viewBox="0 0 200 200" aria-hidden="true">
+          <defs>
+            <path id="badgeCircle"
+              d="M 100,100 m -74,0 a 74,74 0 1,1 148,0 a 74,74 0 1,1 -148,0" />
+          </defs>
+          <text>
+            <textPath href="#badgeCircle" startOffset="0%">
+              Graphic Designer · Illustrator ·
+            </textPath>
+          </text>
+        </svg>
+        <img class="badge__portrait" src="assets/portrait.jpg" alt="Maria Lan" width="900" height="900" />
+      </div>
     </div>
   </section>
 
