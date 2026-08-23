@@ -43,6 +43,18 @@ square works best. Currently seven placeholders.
 The category shows on the home page card and in the project page's
 detail row, alongside the year.
 
+## Cover and header can differ
+
+`01` (or `cover.jpg`) is the card on the home page. If the header at the
+top of the project page should show something else, add a `hero.jpg`
+next to it and the page will use that instead. Domovoy does this: the
+card is the crocheted Rusik, the header is the printed book.
+
+The header frame is 16 by 9, which is what the covers are shot at, so a
+cover lands in it almost whole. It used to be a viewport-relative height
+that came out at 2.32 and cut about a quarter off the top and bottom of
+every project.
+
 ## Adding to a project that already has photos
 
 Carry on from the last number. Honeest currently ends at `07.jpg`, so
