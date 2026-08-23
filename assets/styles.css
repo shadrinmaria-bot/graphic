@@ -475,10 +475,13 @@ a { color: inherit; text-decoration: none; }
    and standing 854px tall, the biggest thing on the page. A square treats a
    landscape and a portrait source alike, and the covers are cut to it, so
    nothing is cropped in the browser at all. */
+/* No fill behind the covers: every one is cut out of its background, so the
+   piece sits on the page itself rather than in a tinted box. The width and
+   height on each tag still hold the square open while the file arrives, so
+   nothing shifts as the page loads. */
 .work__frame {
   aspect-ratio: 1;
   overflow: hidden;
-  background: var(--tint);
 }
 .work__frame img {
   width: 100%;
