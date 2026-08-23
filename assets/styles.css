@@ -799,6 +799,11 @@ a { color: inherit; text-decoration: none; }
    quarter off the top and bottom: on Domovoy that cut the book in half.
    Holding the frame at the proportion the pictures were made in means they
    show whole, and the height still answers to the width. */
+/* Each page sets this frame to the proportion of its own header photograph,
+   inline, so the picture shows whole and nothing is cropped. A fixed ratio
+   here cannot do that: the covers run from 1.79 to 1.94, and squaring the
+   card images left this frame showing a square blown up to fill a wide box.
+   The 16/9 below is only the fallback if a page forgets to say. */
 .project-hero {
   position: relative;
   width: 100%;
@@ -808,6 +813,7 @@ a { color: inherit; text-decoration: none; }
   overflow: hidden;
   background: var(--tint);
 }
+.project-hero img { object-fit: contain; }
 .project-hero img {
   width: 100%;
   height: 100%;
