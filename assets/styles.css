@@ -334,7 +334,10 @@ a { color: inherit; text-decoration: none; }
   position: relative;
   /* Sized so the portrait itself lands near 180px, which is where a face
      stops being a thumbnail and starts being a photograph. */
-  width: clamp(220px, 22vw, 320px);
+  /* Stepped rather than fluid, because the words live in the SVG and scale
+     with the box: a fluid ring makes the type drift with the viewport. Each
+     step pairs a size with a font-size that renders the words at 11px. */
+  width: 380px;
   aspect-ratio: 1;
   flex: 0 0 auto;
   display: grid;
@@ -382,11 +385,18 @@ a { color: inherit; text-decoration: none; }
      scaling down with the size, so the words still run most of the way
      round: at the same proportion they would cover half the circle and the
      ring would read as an arc. */
-  font-size: 9.6px;
-  letter-spacing: 7.2px;
+  font-size: 5.8px;      /* renders 11px against the 380px ring */
+  letter-spacing: 5.5px;
   text-transform: uppercase;
   fill: var(--ink);
   font-weight: 500;
+}
+
+/* Between a laptop and a phone the ring steps down, and the type steps up
+   to match, so the words stay at 11px throughout. */
+@media (max-width: 1100px) {
+  .badge { width: 280px; }
+  .badge text { font-size: 7.9px; letter-spacing: 4.1px; }
 }
 
 /* ============================================================
@@ -765,7 +775,7 @@ a { color: inherit; text-decoration: none; }
   /* The type scales with the ring, so at 150px the desktop value would
      render at 7px. This puts it back to about 11px, where the words are
      still readable, with the tracking closed up to match. */
-  .badge text { font-size: 14.1px; letter-spacing: 5px; }
+  .badge text { font-size: 14.7px; letter-spacing: 1.9px; }
   .intro__text { padding-right: 166px; }
   .work__meta { flex-wrap: wrap; row-gap: 0.35rem; }
   .work__tag { width: 100%; }
