@@ -20,10 +20,10 @@
   <meta property="og:title" content="Kengo Kuma · Maria Lan" />
   <meta property="og:description" content="Kengo Kuma: a typography brochure about the Japanese architect, where the type stays inside its frames against an architecture made of open space." />
   <meta property="og:url" content="https://marialandzn.com/projects/kengo-kuma.html" />
-  <meta property="og:image" content="https://marialandzn.com/assets/og.jpg" />
+  <meta property="og:image" content="https://marialandzn.com/assets/og/kengo-kuma.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Maria Lan Portfolio: a pressed-flower composition" />
+  <meta property="og:image:alt" content="The Kengo Kuma brochure, open on a spread" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="canonical" href="https://marialandzn.com/projects/kengo-kuma.html" />
 
@@ -62,8 +62,8 @@
   <!-- ============================================================
        COVER
   ============================================================ -->
-  <section class="project-hero" style="aspect-ratio: 2000 / 1125;">
-    <img src="../assets/projects/kengo-kuma/hero.jpg" width="2000" height="1125" alt="Kengo Kuma, the brochure" />
+  <section class="project-hero" style="aspect-ratio: 2000 / 1081;">
+    <img src="../assets/projects/kengo-kuma/hero.jpg" width="2000" height="1081" alt="The Kengo Kuma brochure, open on a spread" />
   </section>
 
   <!-- ============================================================
@@ -104,16 +104,20 @@
         </div>
       </div>
 
-      <!-- No rail yet. Two tall pictures from this project belong here, beside
-           the writing, exactly as on the other five pages:
+      <!-- Work from this project, beside the writing so it has something to
+           be read against. The poster is cut out of its mockup and sits on
+           the page's own ground, like the covers on the home page. -->
+      <div class="project-body__rail">
+        <figure class="media media--cutout">
+          <img src="../assets/projects/kengo-kuma/poster.webp" width="1200" height="1677" alt="The exhibition poster for Kengo Kuma" loading="lazy" decoding="async" />
+          <figcaption>The poster</figcaption>
+        </figure>
 
-             <div class="project-body__rail">
-               <figure class="media"> … </figure>
-               <figure class="media"> … </figure>
-             </div>
-
-           Until then the text takes the full width rather than leaving an
-           empty half-page beside it. -->
+        <figure class="media">
+          <img src="../assets/projects/kengo-kuma/front2.jpg" width="2000" height="1499" alt="The brochure cover, with the title set in a white square" loading="lazy" decoding="async" />
+          <figcaption>The brochure, front</figcaption>
+        </figure>
+      </div>
 
     </div>
   </section>
@@ -123,7 +127,28 @@
   ============================================================ -->
   <section class="container">
     <div class="gallery reveal">
-      <!-- Upload into assets/projects/kengo-kuma/ and they get wired in here. -->
+      <!-- The flip-through comes first: it is the only thing here that shows
+           the type doing its work across a run of spreads. Silent, so it
+           plays inline on a loop with no controls, and opens with them. -->
+      <figure class="media media--full">
+        <video poster="../assets/projects/kengo-kuma/booklet-poster.jpg" width="1734" height="614"
+               autoplay muted loop playsinline preload="metadata" aria-label="Turning through the brochure, spread by spread">
+          <source src="../assets/projects/kengo-kuma/booklet.mp4" type="video/mp4" />
+          <source src="../assets/projects/kengo-kuma/booklet.webm" type="video/webm" />
+        </video>
+      </figure>
+
+      <figure class="media media--full">
+        <img src="../assets/projects/kengo-kuma/inside1.jpg" width="2000" height="1500" alt="An inside spread, a photograph running to the edge with a block of text held in a white panel" loading="lazy" decoding="async" />
+      </figure>
+
+      <figure class="media media--half">
+        <img src="../assets/projects/kengo-kuma/both.jpg" width="2000" height="1500" alt="The brochure open, front and back covers together" loading="lazy" decoding="async" />
+      </figure>
+
+      <figure class="media media--half">
+        <img src="../assets/projects/kengo-kuma/back.jpg" width="2000" height="1500" alt="The back cover, with a single line of text in a white panel" loading="lazy" decoding="async" />
+      </figure>
     </div>
   </section>
 

@@ -127,20 +127,27 @@ export easily passes that; the same picture as a 2000 px JPG will not.
 PNG is the usual culprit — use JPG for photographs, and keep PNG only
 where transparency is needed (like the p1–p5 sprigs).
 
-## Kengo Kuma: waiting on photos
+## Kengo Kuma: what was made from the uploads
 
-The folder and the page exist, and both hold placeholders: a flat
-`cover.webp` for the home page card and a flat `hero.jpg` for the header.
-Upload the brochure and poster shots into
-`assets/projects/kengo-kuma/` and they replace those.
+The uploads were mockups shot loose, with the object filling only about
+half the frame, so each one arrived in the gallery as a small thing adrift
+in grey. Every one was cropped to the object plus an even margin, keeping
+the mockup's own 4:3 and its own grey ground, so the run of them reads as
+one set. The masters are still in the folder:
 
-Worth having, in this order: the brochure open on a spread, the cover,
-the poster whole, and any spread where the type does something the
-others do not. Two tall or square ones will be lifted up beside the
-writing, as on the other pages.
+    cover.png                        -> cover.webp   (home page card, cut out)
+    horizontal-brochure-mockup.png   -> hero.jpg     (page header)
+    pngposter.png                    -> poster.webp  (the rail, cut out)
+    front2 / back / both / inside1   -> cropped in place
+    booklet.mp4                      -> re-encoded, see below
 
-Until the pictures are there the page shows the write-up full width
-rather than leaving an empty half-page beside it.
+The clip came in at 11.4 MB with a silent soundtrack (mean volume -47 dB).
+The audio was dropped and the video re-encoded at CRF 23: it ships at
+3.3 MB, with a mean difference of under 2 of 255 against the source. A
+WebM and a poster frame sit beside it, like the ChikChak clips.
+
+This project uses descriptive filenames rather than the numbering above,
+because that is how they were uploaded. Either is fine.
 
 ## Link previews
 
@@ -165,9 +172,6 @@ If a project's header changes, rebuild that card:
 
 The picture is fitted whole on the page's own ground rather than cropped,
 so nothing of the work is cut off and the bars at the sides are invisible.
-
-Kengo Kuma has no photographs yet, so its page borrows the site card.
-Once its pictures are in, give it its own with the snippet above.
 
 The addresses in those tags are absolute (`https://marialandzn.com/...`),
 which is what the platforms require. If the domain ever changes, they all
