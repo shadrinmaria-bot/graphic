@@ -141,3 +141,34 @@ writing, as on the other pages.
 
 Until the pictures are there the page shows the write-up full width
 rather than leaving an empty half-page beside it.
+
+## Link previews
+
+Every page carries Open Graph tags, so a link sent in WhatsApp, LinkedIn
+or Slack arrives as a card with a picture instead of a bare address. The
+picture is a real 1200 by 630 file, one per page, in `assets/og/`, with
+the site's own card at `assets/og.jpg`.
+
+If a project's header changes, rebuild that card:
+
+    python3 - <<'EOF'
+    from PIL import Image
+    W, H, GROUND, PAD = 1200, 630, (239, 234, 231), 40
+    slug = 'honeest'                      # the project to rebuild
+    im = Image.open(f'assets/projects/{slug}/hero.jpg').convert('RGB')
+    s = min((W - 2*PAD) / im.width, (H - 2*PAD) / im.height)
+    im = im.resize((round(im.width*s), round(im.height*s)), Image.LANCZOS)
+    card = Image.new('RGB', (W, H), GROUND)
+    card.paste(im, ((W - im.width)//2, (H - im.height)//2))
+    card.save(f'assets/og/{slug}.jpg', quality=88, optimize=True, progressive=True)
+    EOF
+
+The picture is fitted whole on the page's own ground rather than cropped,
+so nothing of the work is cut off and the bars at the sides are invisible.
+
+Kengo Kuma has no photographs yet, so its page borrows the site card.
+Once its pictures are in, give it its own with the snippet above.
+
+The addresses in those tags are absolute (`https://marialandzn.com/...`),
+which is what the platforms require. If the domain ever changes, they all
+have to change with it.

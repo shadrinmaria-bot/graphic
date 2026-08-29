@@ -326,6 +326,15 @@ a { color: inherit; text-decoration: none; }
   max-width: 34ch;
   margin-top: 0.85rem;
 }
+/* Where she is and what she is open to. Sans and quieter than the tagline,
+   because it is information rather than voice. */
+.intro__where {
+  font-family: var(--sans);
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+  max-width: 38ch;
+  margin-top: 0.9rem;
+}
 
 /* The badge is a ring of type turning around a still portrait. Only the
    ring carries the animation: a rotating photograph would be a novelty,
