@@ -35,18 +35,30 @@ itself refuses files over 100 MB.
 
 ## Cache
 
-The stylesheet and script are linked with a hash of their own contents
-(`assets/styles.css?v=cab524e5`). Without it a browser keeps serving the
-copy it already has, so new markup lands against old rules: the page
-still renders, just wrongly, and it reads as a design fault rather than
-a stale file. That is exactly how a two-column layout came back looking
-like a broken one-column layout.
+Every local asset is linked with a hash of its own contents
+(`assets/styles.css?v=cab524e5`, `cover.webp?v=dedf742e`). The address is
+the only thing a browser looks at, so replacing a file while its address
+stays the same means the visitor carries on seeing the old one. Nothing
+breaks visibly: the page loads, it is simply out of date, and it reads as
+though the change was never made.
 
-**After editing `assets/styles.css` or `assets/site.js`, run:**
+That has already cost two rounds here. A stylesheet edit came back as a
+two-column layout rendering like a broken one-column one, against rules a
+browser had cached. Later a project cover was replaced and the old one
+kept appearing, because a picture's URL was not stamped at all.
+
+**After changing anything under `assets/`, pictures included, run:**
 
     python3 tools/stamp-assets.py
 
-It rewrites the links on every page. Commit the result with the change.
+It rewrites the links on every page: stylesheet, script, images, video,
+posters, favicons, the CVs and the link-preview cards. Running it twice
+changes nothing, so run it whenever in doubt. Commit the result with the
+change. It exits non-zero and names any link with no file behind it, so
+it doubles as a check for broken references.
+
+Uploading a replacement under the same filename is fine and is the normal
+way to do it. Just run the stamper afterwards.
 
 ## Hebrew
 
