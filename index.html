@@ -28,7 +28,7 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="assets/styles.css?v=2a0956c8" />
+  <link rel="stylesheet" href="assets/styles.css?v=13b21c0f" />
 </head>
 
 <body>
@@ -52,12 +52,13 @@
   <section class="hero" id="hero">
     <div class="hero__stage">
       <!-- The artwork with its three loose shapes erased. They are layered
-           back on below so each can drift independently. The original
-           upload is kept untouched at assets/Frame 1.jpg. -->
+           back on below so each can drift independently. The year under
+           "Portfolio" was painted out too, so the banner does not date
+           itself. The original upload is kept untouched at assets/Frame 1.jpg. -->
       <img
         class="hero__img"
         src="assets/hero-base.jpg"
-        alt="Maria Lan Portfolio 2026: a pressed-flower composition"
+        alt="Maria Lan Portfolio: a pressed-flower composition"
       />
 
       <!-- Lifted from the artwork, pinned back at their exact positions -->
@@ -117,7 +118,12 @@
        3. AUTO-SCROLLING CAROUSEL
        JS duplicates the items to create a seamless infinite loop.
   ============================================================ -->
-  <section class="carousel" aria-label="Selected imagery">
+  <section class="carousel" aria-labelledby="carouselTitle">
+    <div class="container carousel__head reveal">
+      <h2 class="carousel__title" id="carouselTitle">Haifa Citizens</h2>
+      <span class="label carousel__kicker">Illustrations</span>
+    </div>
+
     <div class="carousel__track" id="carouselTrack">
       <!-- Art lives in assets/carousel/. Order is shuffled on every load,
            so the sequence here does not matter. Add or remove freely.
@@ -137,12 +143,17 @@
       <div class="carousel__item" style="aspect-ratio: 1800 / 1800;"><img src="assets/carousel/art-11.jpg" alt="Animal before pink towers" loading="lazy" decoding="async" /></div>
       <div class="carousel__item" style="aspect-ratio: 1800 / 1800;"><img src="assets/carousel/art-12.jpg" alt="Fox before a stone arch" loading="lazy" decoding="async" /></div>
     </div>
+
+    <div class="container carousel__note reveal">
+      <p>A calendar of Haifa's landmarks and the animals that live in the
+         neighbourhoods around them.</p>
+    </div>
   </section>
 
   <hr class="hairline" />
 
   <!-- ============================================================
-       4. WORKS — five pieces, each with its own space
+       4. WORKS — six pieces, each with its own space
   ============================================================ -->
   <section class="works" id="works">
     <div class="container">
@@ -213,12 +224,27 @@
              loading="lazy" decoding="async" />
       </a>
 
-      <a href="projects/hadelet-haptucha.html" class="work work--left reveal">
+      <a href="projects/kengo-kuma.html" class="work work--left reveal">
+        <figure class="work__frame">
+          <img src="assets/projects/kengo-kuma/cover.webp" width="1400" height="1400" alt="The Kengo Kuma brochure, open" />
+        </figure>
+        <div class="work__meta">
+          <span class="work__index">05</span>
+          <h3 class="work__title" dir="auto">Kengo Kuma</h3>
+          <span class="work__tag">Editorial &amp; Print</span>
+        </div>
+        <!-- // Decorative sprig — fills the empty ground beside the piece -->
+        <img class="work__sprig" style="--sprig-top: 52%;"
+             src="assets/p2.png" alt="" aria-hidden="true"
+             loading="lazy" decoding="async" />
+      </a>
+
+      <a href="projects/hadelet-haptucha.html" class="work work--right reveal">
         <figure class="work__frame">
           <img src="assets/projects/hadelet-haptucha/cover.webp" width="1400" height="1400" alt="The Open Door sleeve with two records" />
         </figure>
         <div class="work__meta" dir="rtl">
-          <span class="work__index">05</span>
+          <span class="work__index">06</span>
           <h3 class="work__title" lang="he" dir="auto">הדלת הפתוחה</h3>
           <span class="work__tag">Design</span>
         </div>

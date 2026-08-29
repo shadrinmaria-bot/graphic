@@ -8,7 +8,8 @@ One folder per project. Upload photos into the matching folder:
 | 2 | T2Med                | `assets/projects/t2med/`            | `projects/t2med.html`            |
 | 3 | דומובוי עולה לארץ    | `assets/projects/domovoy/`          | `projects/domovoy.html`          |
 | 4 | צ'יק צ'אק            | `assets/projects/chik-chak/`        | `projects/chik-chak.html`        |
-| 5 | הדלת הפתוחה          | `assets/projects/hadelet-haptucha/` | `projects/hadelet-haptucha.html` |
+| 5 | Kengo Kuma           | `assets/projects/kengo-kuma/`       | `projects/kengo-kuma.html`       |
+| 6 | הדלת הפתוחה          | `assets/projects/hadelet-haptucha/` | `projects/hadelet-haptucha.html` |
 
 ## Naming
 
@@ -38,7 +39,8 @@ square works best. Currently seven placeholders.
 | 2 | T2Med                | Branding & Identity          | 2025 |
 | 3 | דומובוי עולה לארץ    | Illustration & Storytelling  | 2026 |
 | 4 | צ'יק צ'אק            | Branding & Identity          | 2026 |
-| 5 | הדלת הפתוחה          | Design                       | 2025 |
+| 5 | Kengo Kuma           | Editorial & Print            | 2024 |
+| 6 | הדלת הפתוחה          | Design                       | 2025 |
 
 The category shows on the home page card and in the project page's
 detail row, alongside the year.
@@ -124,3 +126,18 @@ GitHub's web uploader rejects files over 25 MB. A full-resolution PNG
 export easily passes that; the same picture as a 2000 px JPG will not.
 PNG is the usual culprit — use JPG for photographs, and keep PNG only
 where transparency is needed (like the p1–p5 sprigs).
+
+## Kengo Kuma: waiting on photos
+
+The folder and the page exist, and both hold placeholders: a flat
+`cover.webp` for the home page card and a flat `hero.jpg` for the header.
+Upload the brochure and poster shots into
+`assets/projects/kengo-kuma/` and they replace those.
+
+Worth having, in this order: the brochure open on a spread, the cover,
+the poster whole, and any spread where the type does something the
+others do not. Two tall or square ones will be lifted up beside the
+writing, as on the other pages.
+
+Until the pictures are there the page shows the write-up full width
+rather than leaving an empty half-page beside it.

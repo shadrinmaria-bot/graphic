@@ -406,6 +406,22 @@ a { color: inherit; text-decoration: none; }
   padding-block: clamp(2rem, 5vw, 3.5rem);
   overflow: hidden;
 }
+/* The strip needed saying what it is. The name leads and the medium sits
+   under it, the reverse of the works heading above, because here the title
+   is the subject and the medium is the aside. */
+.carousel__head { margin-bottom: clamp(1.25rem, 3vw, 2rem); }
+.carousel__title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: var(--display-sm);
+  line-height: 1.1;
+}
+.carousel__kicker { display: block; color: var(--ink-soft); margin-top: var(--space-2xs); }
+.carousel__note {
+  margin-top: clamp(1.25rem, 3vw, 2rem);
+  color: var(--ink-soft);
+}
+.carousel__note p { max-width: 58ch; }
 .carousel__track {
   display: flex;
   gap: 1rem;
@@ -932,6 +948,30 @@ a { color: inherit; text-decoration: none; }
 }
 .project-body p + p { margin-top: 1.1rem; }
 .project-body__text { max-width: 62ch; }
+
+/* A project whose pictures have not been uploaded yet has no rail, and the
+   second column would then be an empty half-page beside the writing: the
+   very hole the rail exists to fill. With no rail, the two languages sit
+   side by side and use the width between them instead. As soon as pictures
+   arrive and a rail is added, both rules stop applying on their own. */
+.project-body:not(:has(.project-body__rail)) {
+  grid-template-columns: minmax(0, 1fr);
+}
+@media (min-width: 901px) {
+  .project-body:not(:has(.project-body__rail)) .project-body__text {
+    max-width: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(2rem, 5vw, 4rem);
+  }
+  /* Side by side, the hairline that separated one language from the other
+     belongs between the columns, not above the second one. */
+  .project-body:not(:has(.project-body__rail)) .project-text + .project-text {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+  }
+}
 
 /* One picture beside the English, one beside the Hebrew: spread across the
    column rather than stacked at the top, so the rail runs the full height
